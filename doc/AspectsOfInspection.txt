@@ -1,0 +1,14 @@
+Aspects of inspection
+
+We defined 9 criteria according to IEEE Std 29148-2011:
+- Necessary: If it is removed or deleted, a deficiency will exist, which cannot be fulfilled by other capabilities
+- Implementation Free: Avoids placing unnecessary constraints on the design
+- Unambiguous: It can be interpreted in only one way; is simple and easy to understand
+- Consistent: Is free of conflicts with other requirements
+- Complete: Needs no further amplification 
+- Singular: Includes only one requirement with no use of conjunctions
+- Feasible: technically achievable, fits within system constraints
+- Traceable: Upwards traceable to the stakeholder statements; downwards traceable to other documents
+- Verifiable: Has the means to prove that the system satisfies the specified requirement
+
+Three members of our team (Zoltan Lux, Balazs Nagy, Mate Stogica) inspected these - 4-5 criteria per person – and the forth member (Bence Tamas) wrote the report about the identified problems. So a few but not so trivial criteria were inspected more than once, in this way we tried to make sure not to miss anything important.
