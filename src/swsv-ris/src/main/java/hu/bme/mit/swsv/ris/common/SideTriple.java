@@ -13,6 +13,8 @@ public final class SideTriple<T> {
 	private final T straight;
 	private final T divergent;
 
+	private volatile int hashCode = 0;
+
 	private SideTriple(final T facing, final T straight, final T divergent) {
 		notNull(facing);
 		notNull(straight);
@@ -144,5 +146,30 @@ public final class SideTriple<T> {
 		default:
 			throw new AssertionError("Unknown side: " + side + ".");
 		}
+	}
+
+	@Override
+	public boolean equals(final Object obj) {
+		if (this == obj) {
+			return true;
+		} else if (obj == null) {
+			return false;
+		} else if (obj instanceof SideTriple<?>) {
+			final SideTriple<?> that = (SideTriple<?>) obj;
+			return this.getFacing().equals(that.getFacing()) && this.getStraight().equals(that.getStraight())
+					&& this.getDivergent().equals(that.getDivergent());
+		} else {
+			return false;
+		}
+	}
+
+	@Override
+	public int hashCode() {
+		int result = hashCode;
+		if (result == 0) {
+			result = (31 * facing.hashCode() + straight.hashCode()) * 31 + divergent.hashCode();
+			hashCode = result;
+		}
+		return hashCode;
 	}
 }
