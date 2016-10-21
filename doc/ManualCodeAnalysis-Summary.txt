@@ -1,0 +1,2 @@
+The SafetyLogicImpl class implements the safety functions of TSM. It receives and stores status messages from the monitored sections and turnout, and also the heartbeat messages from neighbouring TSMs. 
+The class contains the decision-making logic (based on local and distributed decisions) which is executed whenever a received message implies new safety conditions,  i.e. a status change is recognized. Based on these decisions it sends the appropriate control signals to the monitored sections. Currently it is not responsible for sending heartbeat messages to other TSMs.
