@@ -156,6 +156,9 @@ public final class SafetyLogicImpl implements SafetyLogic {
 		if (turnoutDirection == Direction.STRAIGHT
 				&& neighborStatuses.getStraight().getStatus(TOLERANCE_MS) == NeighborTSMStatus.DENIED)
 			return DISABLED;
+		if (turnoutDirection == Direction.DIVERGENT
+				&& neighborStatuses.getDivergent().getStatus(TOLERANCE_MS) == NeighborTSMStatus.DENIED)
+			return DISABLED;
 		return ENABLED;
 	}
 

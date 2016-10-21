@@ -6,6 +6,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.inOrder;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.reset;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
@@ -100,6 +101,21 @@ public class SafetyLogicDistributedDecisionTest {
 				eq(SideTriple.of(SectionControl.DISABLED, SectionControl.ENABLED, SectionControl.ENABLED)));
 
 		verify(signalMapper, times(2)).sendControl(any());
+	}
+
+	/**
+	 * Test requirement REQ-TSM-03-01-02-03.
+	 */
+	@Test(timeout = HEARTBEAT_PERIOD_MS * HEARTBEAT_WAIT_NR)
+	public void testFacingDivergentDecision() {
+		initDates();
+		safetyLogic.turnoutDirectionChanged(Direction.DIVERGENT);
+		safetyLogic.sectionOccupancyChanged(Side.FACING, SectionOccupancy.OCCUPIED);
+
+		reset(signalMapper);
+		safetyLogic.neighborStatusChanged(Side.DIVERGENT, dateBase, NeighborTSMStatus.DENIED);
+		verify(signalMapper).sendControl(
+				eq(SideTriple.of(SectionControl.DISABLED, SectionControl.ENABLED, SectionControl.ENABLED)));
 	}
 
 }
