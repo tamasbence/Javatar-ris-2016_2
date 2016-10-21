@@ -169,10 +169,15 @@ public final class SafetyLogicImpl implements SafetyLogic {
 	 */
 	private SideTriple<SectionControl> makeDistributedDecision() {
 		SectionControl facingDecision = ENABLED;
+		SectionControl straightDecision = ENABLED;
 		if (sectionOccupancies.getFacing() == OCCUPIED) {
 			facingDecision = getOccupiedFacingDistributedDecision();
 		}
-		return SideTriple.of(facingDecision, ENABLED, ENABLED);
+		if (sectionOccupancies.getStraight() == SectionOccupancy.OCCUPIED
+				&& neighborStatuses.getStraight().getStatus(TOLERANCE_MS) == NeighborTSMStatus.DENIED) {
+			straightDecision = DISABLED;
+		}
+		return SideTriple.of(facingDecision, straightDecision, ENABLED);
 	}
 
 	/**
