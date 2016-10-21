@@ -170,6 +170,7 @@ public final class SafetyLogicImpl implements SafetyLogic {
 	private SideTriple<SectionControl> makeDistributedDecision() {
 		SectionControl facingDecision = ENABLED;
 		SectionControl straightDecision = ENABLED;
+		SectionControl divergentDecision = ENABLED;
 		if (sectionOccupancies.getFacing() == OCCUPIED) {
 			facingDecision = getOccupiedFacingDistributedDecision();
 		}
@@ -177,7 +178,11 @@ public final class SafetyLogicImpl implements SafetyLogic {
 				&& neighborStatuses.getStraight().getStatus(TOLERANCE_MS) == NeighborTSMStatus.DENIED) {
 			straightDecision = DISABLED;
 		}
-		return SideTriple.of(facingDecision, straightDecision, ENABLED);
+		if (sectionOccupancies.getDivergent() == SectionOccupancy.OCCUPIED
+				&& neighborStatuses.getDivergent().getStatus(TOLERANCE_MS) == NeighborTSMStatus.DENIED) {
+			divergentDecision = DISABLED;
+		}
+		return SideTriple.of(facingDecision, straightDecision, divergentDecision);
 	}
 
 	/**

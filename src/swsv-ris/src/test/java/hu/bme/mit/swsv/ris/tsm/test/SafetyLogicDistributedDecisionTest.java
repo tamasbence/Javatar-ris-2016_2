@@ -133,4 +133,19 @@ public class SafetyLogicDistributedDecisionTest {
 				eq(SideTriple.of(SectionControl.ENABLED, SectionControl.DISABLED, SectionControl.ENABLED)));
 	}
 
+	/**
+	 * Test requirement REQ-TSM-03-01-02-05.
+	 */
+	@Test(timeout = HEARTBEAT_PERIOD_MS * HEARTBEAT_WAIT_NR)
+	public void testDivergentDivergentDecision() {
+		initDates();
+		safetyLogic.turnoutDirectionChanged(Direction.DIVERGENT);
+		safetyLogic.sectionOccupancyChanged(Side.DIVERGENT, SectionOccupancy.OCCUPIED);
+
+		reset(signalMapper);
+		safetyLogic.neighborStatusChanged(Side.DIVERGENT, dateBase, NeighborTSMStatus.DENIED);
+		verify(signalMapper).sendControl(
+				eq(SideTriple.of(SectionControl.ENABLED, SectionControl.ENABLED, SectionControl.DISABLED)));
+	}
+
 }
