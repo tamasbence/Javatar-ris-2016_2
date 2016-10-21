@@ -162,6 +162,14 @@ public final class SafetyLogicImpl implements SafetyLogic {
 		return ENABLED;
 	}
 
+	private SectionControl getOccupiedNonFacingDistributedDecision(final Side side) {
+		if (sectionOccupancies.get(side) == SectionOccupancy.OCCUPIED
+				&& neighborStatuses.get(side).getStatus(TOLERANCE_MS) == NeighborTSMStatus.DENIED) {
+			return DISABLED;
+		}
+		return ENABLED;
+	}
+
 	/**
 	 * Make distributed decision based on the status of the neighbor TSMs.
 	 *
@@ -174,14 +182,8 @@ public final class SafetyLogicImpl implements SafetyLogic {
 		if (sectionOccupancies.getFacing() == OCCUPIED) {
 			facingDecision = getOccupiedFacingDistributedDecision();
 		}
-		if (sectionOccupancies.getStraight() == SectionOccupancy.OCCUPIED
-				&& neighborStatuses.getStraight().getStatus(TOLERANCE_MS) == NeighborTSMStatus.DENIED) {
-			straightDecision = DISABLED;
-		}
-		if (sectionOccupancies.getDivergent() == SectionOccupancy.OCCUPIED
-				&& neighborStatuses.getDivergent().getStatus(TOLERANCE_MS) == NeighborTSMStatus.DENIED) {
-			divergentDecision = DISABLED;
-		}
+		straightDecision = getOccupiedNonFacingDistributedDecision(Side.STRAIGHT);
+		divergentDecision = getOccupiedNonFacingDistributedDecision(Side.DIVERGENT);
 		return SideTriple.of(facingDecision, straightDecision, divergentDecision);
 	}
 
