@@ -177,4 +177,53 @@ public class SafetyLogicDistributedDecisionTest {
 		verify(signalMapper).sendControl(
 				eq(SideTriple.of(SectionControl.ENABLED, SectionControl.ENABLED, SectionControl.DISABLED)));
 	}
+
+	/**
+	 * Test requirement REQ-TSM-03-01-02.
+	 */
+	@Test(timeout = HEARTBEAT_PERIOD_MS * HEARTBEAT_WAIT_NR)
+	public void testAllNeighborDenied() {
+		initDates();
+		safetyLogic.neighborStatusChanged(Side.FACING, dateBase, NeighborTSMStatus.DENIED);
+		safetyLogic.neighborStatusChanged(Side.STRAIGHT, dateBase, NeighborTSMStatus.DENIED);
+		safetyLogic.neighborStatusChanged(Side.DIVERGENT, dateBase, NeighborTSMStatus.DENIED);
+
+		reset(signalMapper);
+		safetyLogic.turnoutDirectionChanged(Direction.DIVERGENT);
+		safetyLogic.turnoutDirectionChanged(Direction.STRAIGHT);
+		verify(signalMapper, times(2))
+				.sendControl(eq(SideTriple.of(SectionControl.ENABLED, SectionControl.ENABLED, SectionControl.ENABLED)));
+
+	}
+
+	/**
+	 * Test requirement REQ-TSM-03-01-02.
+	 */
+	@Test(timeout = HEARTBEAT_PERIOD_MS * HEARTBEAT_WAIT_NR)
+	public void testStraightEnabledWhenDivergentDenied() {
+		initDates();
+		safetyLogic.neighborStatusChanged(Side.DIVERGENT, dateBase, NeighborTSMStatus.DENIED);
+
+		reset(signalMapper);
+		safetyLogic.sectionOccupancyChanged(Side.FACING, SectionOccupancy.OCCUPIED);
+		verify(signalMapper)
+				.sendControl(eq(SideTriple.of(SectionControl.ENABLED, SectionControl.ENABLED, SectionControl.ENABLED)));
+
+	}
+
+	/**
+	 * Test requirement REQ-TSM-03-01-02.
+	 */
+	@Test(timeout = HEARTBEAT_PERIOD_MS * HEARTBEAT_WAIT_NR)
+	public void testDivergentEnabledWhenStraightDenied() {
+		initDates();
+		safetyLogic.neighborStatusChanged(Side.STRAIGHT, dateBase, NeighborTSMStatus.DENIED);
+		safetyLogic.turnoutDirectionChanged(Direction.DIVERGENT);
+
+		reset(signalMapper);
+		safetyLogic.sectionOccupancyChanged(Side.FACING, SectionOccupancy.OCCUPIED);
+		verify(signalMapper)
+				.sendControl(eq(SideTriple.of(SectionControl.ENABLED, SectionControl.ENABLED, SectionControl.ENABLED)));
+
+	}
 }
