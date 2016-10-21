@@ -1,0 +1,7 @@
+We defined the following aspects of the manual inspection: 
+- Readable 
+- Reusable, maintainable 
+- Syntactically correct 
+- Free of bugs (dynamic properties e.g. NPE, IOOB etc. also covered) 
+- Adheres to Java platform specific coding guidelines 
+- Adheres to the specification
