@@ -187,6 +187,9 @@ public final class SafetyLogicImpl implements SafetyLogic {
 		if (sectionOccupancies.getStraight() == OCCUPIED && turnoutDirection == STRAIGHT
 				&& neighborStatuses.getFacing().getStatus(TOLERANCE_MS) == NeighborTSMStatus.DENIED)
 			straightDecision = DISABLED;
+		if (sectionOccupancies.getDivergent() == OCCUPIED && turnoutDirection == DIVERGENT
+				&& neighborStatuses.getFacing().getStatus(TOLERANCE_MS) == NeighborTSMStatus.DENIED)
+			divergentDecision = DISABLED;
 		return SideTriple.of(facingDecision, straightDecision, divergentDecision);
 	}
 
