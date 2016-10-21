@@ -162,12 +162,35 @@ public final class SafetyLogicImpl implements SafetyLogic {
 		return ENABLED;
 	}
 
+	private SectionControl getFacingDistributedDecision() {
+		if (sectionOccupancies.getFacing() == SectionOccupancy.FREE)
+			return ENABLED;
+		else {
+			return getOccupiedFacingDistributedDecision();
+		}
+	}
+
+	private boolean directionAndSideEquals(final Direction direction, final Side side) {
+		return (direction == STRAIGHT && side == Side.STRAIGHT) || (direction == DIVERGENT && side == Side.DIVERGENT);
+	}
+
 	private SectionControl getOccupiedNonFacingDistributedDecision(final Side side) {
-		if (sectionOccupancies.get(side) == SectionOccupancy.OCCUPIED
-				&& neighborStatuses.get(side).getStatus(TOLERANCE_MS) == NeighborTSMStatus.DENIED) {
+		if (neighborStatuses.get(side).getStatus(TOLERANCE_MS) == NeighborTSMStatus.DENIED) {
+			return DISABLED;
+		}
+		if (directionAndSideEquals(turnoutDirection, side)
+				&& neighborStatuses.getFacing().getStatus(TOLERANCE_MS) == NeighborTSMStatus.DENIED) {
 			return DISABLED;
 		}
 		return ENABLED;
+	}
+
+	private SectionControl getNonFacingDistributedDecision(final Side side) {
+		if (sectionOccupancies.get(side) == SectionOccupancy.FREE)
+			return ENABLED;
+		else {
+			return getOccupiedNonFacingDistributedDecision(side);
+		}
 	}
 
 	/**
@@ -179,17 +202,9 @@ public final class SafetyLogicImpl implements SafetyLogic {
 		SectionControl facingDecision = ENABLED;
 		SectionControl straightDecision = ENABLED;
 		SectionControl divergentDecision = ENABLED;
-		if (sectionOccupancies.getFacing() == OCCUPIED) {
-			facingDecision = getOccupiedFacingDistributedDecision();
-		}
-		straightDecision = getOccupiedNonFacingDistributedDecision(Side.STRAIGHT);
-		divergentDecision = getOccupiedNonFacingDistributedDecision(Side.DIVERGENT);
-		if (sectionOccupancies.getStraight() == OCCUPIED && turnoutDirection == STRAIGHT
-				&& neighborStatuses.getFacing().getStatus(TOLERANCE_MS) == NeighborTSMStatus.DENIED)
-			straightDecision = DISABLED;
-		if (sectionOccupancies.getDivergent() == OCCUPIED && turnoutDirection == DIVERGENT
-				&& neighborStatuses.getFacing().getStatus(TOLERANCE_MS) == NeighborTSMStatus.DENIED)
-			divergentDecision = DISABLED;
+		facingDecision = getFacingDistributedDecision();
+		straightDecision = getNonFacingDistributedDecision(Side.STRAIGHT);
+		divergentDecision = getNonFacingDistributedDecision(Side.DIVERGENT);
 		return SideTriple.of(facingDecision, straightDecision, divergentDecision);
 	}
 
