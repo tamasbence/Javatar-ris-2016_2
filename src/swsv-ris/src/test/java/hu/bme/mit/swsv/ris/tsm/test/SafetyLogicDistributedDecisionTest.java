@@ -81,4 +81,25 @@ public class SafetyLogicDistributedDecisionTest {
 
 		verify(signalMapper, times(2)).sendControl(any());
 	}
+
+	/**
+	 * Test requirement REQ-TSM-03-01-02-02.
+	 */
+	@Test(timeout = HEARTBEAT_PERIOD_MS * HEARTBEAT_WAIT_NR)
+	public void testFacingStraightDecision() {
+		initDates();
+
+		safetyLogic.turnoutDirectionChanged(Direction.STRAIGHT);
+		safetyLogic.sectionOccupancyChanged(Side.FACING, SectionOccupancy.OCCUPIED);
+		safetyLogic.neighborStatusChanged(Side.STRAIGHT, dateBase, NeighborTSMStatus.DENIED);
+
+		final InOrder inOrderSignalMapper = inOrder(signalMapper);
+		inOrderSignalMapper.verify(signalMapper)
+				.sendControl(eq(SideTriple.of(SectionControl.ENABLED, SectionControl.ENABLED, SectionControl.ENABLED)));
+		inOrderSignalMapper.verify(signalMapper).sendControl(
+				eq(SideTriple.of(SectionControl.DISABLED, SectionControl.ENABLED, SectionControl.ENABLED)));
+
+		verify(signalMapper, times(2)).sendControl(any());
+	}
+
 }

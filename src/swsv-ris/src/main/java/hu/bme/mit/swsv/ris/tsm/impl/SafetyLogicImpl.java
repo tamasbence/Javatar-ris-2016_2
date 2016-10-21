@@ -150,6 +150,15 @@ public final class SafetyLogicImpl implements SafetyLogic {
 		return SideTriple.of(facingDecision, straightDecision, divergentDecision);
 	}
 
+	private SectionControl getOccupiedFacingDistributedDecision() {
+		if (neighborStatuses.getFacing().getStatus(TOLERANCE_MS) == NeighborTSMStatus.DENIED)
+			return DISABLED;
+		if (turnoutDirection == Direction.STRAIGHT
+				&& neighborStatuses.getStraight().getStatus(TOLERANCE_MS) == NeighborTSMStatus.DENIED)
+			return DISABLED;
+		return ENABLED;
+	}
+
 	/**
 	 * Make distributed decision based on the status of the neighbor TSMs.
 	 *
@@ -157,9 +166,9 @@ public final class SafetyLogicImpl implements SafetyLogic {
 	 */
 	private SideTriple<SectionControl> makeDistributedDecision() {
 		SectionControl facingDecision = ENABLED;
-		if (sectionOccupancies.getFacing() == OCCUPIED
-				&& neighborStatuses.getFacing().getStatus(TOLERANCE_MS) == NeighborTSMStatus.DENIED)
-			facingDecision = DISABLED;
+		if (sectionOccupancies.getFacing() == OCCUPIED) {
+			facingDecision = getOccupiedFacingDistributedDecision();
+		}
 		return SideTriple.of(facingDecision, ENABLED, ENABLED);
 	}
 
