@@ -156,8 +156,11 @@ public final class SafetyLogicImpl implements SafetyLogic {
 	 * @return A triple containing a control for each associated section
 	 */
 	private SideTriple<SectionControl> makeDistributedDecision() {
-		// TODO: implementing this method is a task of the home assignment
-		return SideTriple.of(ENABLED, ENABLED, ENABLED);
+		SectionControl facingDecision = ENABLED;
+		if (sectionOccupancies.getFacing() == OCCUPIED
+				&& neighborStatuses.getFacing().getStatus(TOLERANCE_MS) == NeighborTSMStatus.DENIED)
+			facingDecision = DISABLED;
+		return SideTriple.of(facingDecision, ENABLED, ENABLED);
 	}
 
 	/**
