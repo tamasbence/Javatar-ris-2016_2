@@ -9,13 +9,6 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.reset;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
-
-import java.util.Date;
-
-import org.junit.Before;
-import org.junit.Test;
-import org.mockito.InOrder;
-
 import hu.bme.mit.swsv.ris.common.Direction;
 import hu.bme.mit.swsv.ris.common.NeighborTSMInfo;
 import hu.bme.mit.swsv.ris.common.NeighborTSMStatus;
@@ -27,23 +20,21 @@ import hu.bme.mit.swsv.ris.common.logging.LoggerWrapper;
 import hu.bme.mit.swsv.ris.tsm.SignalMapper;
 import hu.bme.mit.swsv.ris.tsm.impl.SafetyLogicImpl;
 
+import java.util.Date;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.InOrder;
+
 public class SafetyLogicDistributedDecisionTest {
 
 	SignalMapper signalMapper;
 	SafetyLogicImpl safetyLogic;
 	Date dateBase;
-	Date datePlus1Sec;
-	Date datePlus10Sec;
+	final static long epoch = 20000;
 
 	public SafetyLogicDistributedDecisionTest() {
 
-	}
-
-	public void initDates() {
-		final long epoch = 20000;
-		dateBase = new Date(epoch);
-		datePlus1Sec = new Date(epoch + 1000);
-		datePlus10Sec = new Date(epoch + 10000);
 	}
 
 	@Before
@@ -59,9 +50,7 @@ public class SafetyLogicDistributedDecisionTest {
 		signalMapper = mock(SignalMapper.class);
 		safetyLogic.setSignalMapper(signalMapper);
 
-		dateBase = null;
-		datePlus1Sec = null;
-		datePlus10Sec = null;
+		dateBase = new Date(epoch);
 	}
 
 	/**
@@ -69,14 +58,13 @@ public class SafetyLogicDistributedDecisionTest {
 	 */
 	@Test(timeout = HEARTBEAT_PERIOD_MS * HEARTBEAT_WAIT_NR)
 	public void testFacingFacingDecision() {
-		initDates();
 
 		safetyLogic.sectionOccupancyChanged(Side.FACING, SectionOccupancy.OCCUPIED);
 		safetyLogic.neighborStatusChanged(Side.FACING, dateBase, NeighborTSMStatus.DENIED);
 
 		final InOrder inOrderSignalMapper = inOrder(signalMapper);
-		inOrderSignalMapper.verify(signalMapper)
-				.sendControl(eq(SideTriple.of(SectionControl.ENABLED, SectionControl.ENABLED, SectionControl.ENABLED)));
+		inOrderSignalMapper.verify(signalMapper).sendControl(
+				eq(SideTriple.of(SectionControl.ENABLED, SectionControl.ENABLED, SectionControl.ENABLED)));
 		inOrderSignalMapper.verify(signalMapper).sendControl(
 				eq(SideTriple.of(SectionControl.DISABLED, SectionControl.ENABLED, SectionControl.ENABLED)));
 
@@ -88,15 +76,14 @@ public class SafetyLogicDistributedDecisionTest {
 	 */
 	@Test(timeout = HEARTBEAT_PERIOD_MS * HEARTBEAT_WAIT_NR)
 	public void testFacingStraightDecision() {
-		initDates();
 
-		safetyLogic.turnoutDirectionChanged(Direction.STRAIGHT);
+		// safetyLogic.turnoutDirectionChanged(Direction.STRAIGHT);
 		safetyLogic.sectionOccupancyChanged(Side.FACING, SectionOccupancy.OCCUPIED);
 		safetyLogic.neighborStatusChanged(Side.STRAIGHT, dateBase, NeighborTSMStatus.DENIED);
 
 		final InOrder inOrderSignalMapper = inOrder(signalMapper);
-		inOrderSignalMapper.verify(signalMapper)
-				.sendControl(eq(SideTriple.of(SectionControl.ENABLED, SectionControl.ENABLED, SectionControl.ENABLED)));
+		inOrderSignalMapper.verify(signalMapper).sendControl(
+				eq(SideTriple.of(SectionControl.ENABLED, SectionControl.ENABLED, SectionControl.ENABLED)));
 		inOrderSignalMapper.verify(signalMapper).sendControl(
 				eq(SideTriple.of(SectionControl.DISABLED, SectionControl.ENABLED, SectionControl.ENABLED)));
 
@@ -108,7 +95,6 @@ public class SafetyLogicDistributedDecisionTest {
 	 */
 	@Test(timeout = HEARTBEAT_PERIOD_MS * HEARTBEAT_WAIT_NR)
 	public void testFacingDivergentDecision() {
-		initDates();
 		safetyLogic.turnoutDirectionChanged(Direction.DIVERGENT);
 		safetyLogic.sectionOccupancyChanged(Side.FACING, SectionOccupancy.OCCUPIED);
 
@@ -123,8 +109,7 @@ public class SafetyLogicDistributedDecisionTest {
 	 */
 	@Test(timeout = HEARTBEAT_PERIOD_MS * HEARTBEAT_WAIT_NR)
 	public void testStraightStraightDecision() {
-		initDates();
-		safetyLogic.turnoutDirectionChanged(Direction.STRAIGHT);
+		// safetyLogic.turnoutDirectionChanged(Direction.STRAIGHT);
 		safetyLogic.sectionOccupancyChanged(Side.STRAIGHT, SectionOccupancy.OCCUPIED);
 
 		reset(signalMapper);
@@ -138,7 +123,6 @@ public class SafetyLogicDistributedDecisionTest {
 	 */
 	@Test(timeout = HEARTBEAT_PERIOD_MS * HEARTBEAT_WAIT_NR)
 	public void testDivergentDivergentDecision() {
-		initDates();
 		safetyLogic.turnoutDirectionChanged(Direction.DIVERGENT);
 		safetyLogic.sectionOccupancyChanged(Side.DIVERGENT, SectionOccupancy.OCCUPIED);
 
@@ -153,8 +137,7 @@ public class SafetyLogicDistributedDecisionTest {
 	 */
 	@Test(timeout = HEARTBEAT_PERIOD_MS * HEARTBEAT_WAIT_NR)
 	public void testStraightFacingDecision() {
-		initDates();
-		safetyLogic.turnoutDirectionChanged(Direction.STRAIGHT);
+		// safetyLogic.turnoutDirectionChanged(Direction.STRAIGHT);
 		safetyLogic.sectionOccupancyChanged(Side.STRAIGHT, SectionOccupancy.OCCUPIED);
 
 		reset(signalMapper);
@@ -168,7 +151,6 @@ public class SafetyLogicDistributedDecisionTest {
 	 */
 	@Test(timeout = HEARTBEAT_PERIOD_MS * HEARTBEAT_WAIT_NR)
 	public void testDivergentFacingDecision() {
-		initDates();
 		safetyLogic.turnoutDirectionChanged(Direction.DIVERGENT);
 		safetyLogic.sectionOccupancyChanged(Side.DIVERGENT, SectionOccupancy.OCCUPIED);
 
@@ -183,7 +165,6 @@ public class SafetyLogicDistributedDecisionTest {
 	 */
 	@Test(timeout = HEARTBEAT_PERIOD_MS * HEARTBEAT_WAIT_NR)
 	public void testAllNeighborDenied() {
-		initDates();
 		safetyLogic.neighborStatusChanged(Side.FACING, dateBase, NeighborTSMStatus.DENIED);
 		safetyLogic.neighborStatusChanged(Side.STRAIGHT, dateBase, NeighborTSMStatus.DENIED);
 		safetyLogic.neighborStatusChanged(Side.DIVERGENT, dateBase, NeighborTSMStatus.DENIED);
@@ -191,8 +172,8 @@ public class SafetyLogicDistributedDecisionTest {
 		reset(signalMapper);
 		safetyLogic.turnoutDirectionChanged(Direction.DIVERGENT);
 		safetyLogic.turnoutDirectionChanged(Direction.STRAIGHT);
-		verify(signalMapper, times(2))
-				.sendControl(eq(SideTriple.of(SectionControl.ENABLED, SectionControl.ENABLED, SectionControl.ENABLED)));
+		verify(signalMapper, times(2)).sendControl(
+				eq(SideTriple.of(SectionControl.ENABLED, SectionControl.ENABLED, SectionControl.ENABLED)));
 
 	}
 
@@ -201,13 +182,12 @@ public class SafetyLogicDistributedDecisionTest {
 	 */
 	@Test(timeout = HEARTBEAT_PERIOD_MS * HEARTBEAT_WAIT_NR)
 	public void testStraightEnabledWhenDivergentDenied() {
-		initDates();
 		safetyLogic.neighborStatusChanged(Side.DIVERGENT, dateBase, NeighborTSMStatus.DENIED);
 
 		reset(signalMapper);
 		safetyLogic.sectionOccupancyChanged(Side.FACING, SectionOccupancy.OCCUPIED);
-		verify(signalMapper)
-				.sendControl(eq(SideTriple.of(SectionControl.ENABLED, SectionControl.ENABLED, SectionControl.ENABLED)));
+		verify(signalMapper).sendControl(
+				eq(SideTriple.of(SectionControl.ENABLED, SectionControl.ENABLED, SectionControl.ENABLED)));
 
 	}
 
@@ -216,14 +196,13 @@ public class SafetyLogicDistributedDecisionTest {
 	 */
 	@Test(timeout = HEARTBEAT_PERIOD_MS * HEARTBEAT_WAIT_NR)
 	public void testDivergentEnabledWhenStraightDenied() {
-		initDates();
 		safetyLogic.neighborStatusChanged(Side.STRAIGHT, dateBase, NeighborTSMStatus.DENIED);
 		safetyLogic.turnoutDirectionChanged(Direction.DIVERGENT);
 
 		reset(signalMapper);
 		safetyLogic.sectionOccupancyChanged(Side.FACING, SectionOccupancy.OCCUPIED);
-		verify(signalMapper)
-				.sendControl(eq(SideTriple.of(SectionControl.ENABLED, SectionControl.ENABLED, SectionControl.ENABLED)));
+		verify(signalMapper).sendControl(
+				eq(SideTriple.of(SectionControl.ENABLED, SectionControl.ENABLED, SectionControl.ENABLED)));
 
 	}
 }
