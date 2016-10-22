@@ -77,7 +77,6 @@ public class SafetyLogicDistributedDecisionTest {
 	@Test(timeout = HEARTBEAT_PERIOD_MS * HEARTBEAT_WAIT_NR)
 	public void testFacingStraightDecision() {
 
-		// safetyLogic.turnoutDirectionChanged(Direction.STRAIGHT);
 		safetyLogic.sectionOccupancyChanged(Side.FACING, SectionOccupancy.OCCUPIED);
 		safetyLogic.neighborStatusChanged(Side.STRAIGHT, dateBase, NeighborTSMStatus.DENIED);
 
@@ -109,7 +108,6 @@ public class SafetyLogicDistributedDecisionTest {
 	 */
 	@Test(timeout = HEARTBEAT_PERIOD_MS * HEARTBEAT_WAIT_NR)
 	public void testStraightStraightDecision() {
-		// safetyLogic.turnoutDirectionChanged(Direction.STRAIGHT);
 		safetyLogic.sectionOccupancyChanged(Side.STRAIGHT, SectionOccupancy.OCCUPIED);
 
 		reset(signalMapper);
@@ -137,7 +135,6 @@ public class SafetyLogicDistributedDecisionTest {
 	 */
 	@Test(timeout = HEARTBEAT_PERIOD_MS * HEARTBEAT_WAIT_NR)
 	public void testStraightFacingDecision() {
-		// safetyLogic.turnoutDirectionChanged(Direction.STRAIGHT);
 		safetyLogic.sectionOccupancyChanged(Side.STRAIGHT, SectionOccupancy.OCCUPIED);
 
 		reset(signalMapper);
