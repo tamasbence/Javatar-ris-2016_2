@@ -30,10 +30,10 @@ import org.junit.runners.Parameterized.Parameters;
 import org.mockito.InOrder;
 
 /**
- * Test class for distributed decision procedure implemented in
+ * Test class for local decision procedure implemented in
  * {@link SafetyLogicImpl} class.
  *
- * @author Mate Stogica,
+ * @author Mate Stogica, Bence Tamas
  *
  */
 @RunWith(Parameterized.class)

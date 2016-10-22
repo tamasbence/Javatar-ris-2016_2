@@ -26,6 +26,13 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InOrder;
 
+/**
+ * Test class for distributed decision procedure implemented in
+ * {@link SafetyLogicImpl} class.
+ *
+ * @author Bence Tamas
+ *
+ */
 public class SafetyLogicDistributedDecisionTest {
 
 	SignalMapper signalMapper;
