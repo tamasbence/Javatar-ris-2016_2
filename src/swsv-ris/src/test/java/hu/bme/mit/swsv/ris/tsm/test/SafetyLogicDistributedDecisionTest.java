@@ -27,6 +27,13 @@ import hu.bme.mit.swsv.ris.common.logging.LoggerWrapper;
 import hu.bme.mit.swsv.ris.tsm.SignalMapper;
 import hu.bme.mit.swsv.ris.tsm.impl.SafetyLogicImpl;
 
+/**
+ * Test class for distributed decision procedure implemented in
+ * {@link SafetyLogicImpl} class.
+ *
+ * @author Bence Tamas
+ *
+ */
 public class SafetyLogicDistributedDecisionTest {
 
 	SignalMapper signalMapper;
@@ -38,7 +45,6 @@ public class SafetyLogicDistributedDecisionTest {
 	}
 
 	public void initDates() {
-		final long epoch = 20000;
 		dateBase = new Date();
 	}
 
@@ -84,7 +90,6 @@ public class SafetyLogicDistributedDecisionTest {
 	public void testFacingStraightDecision() {
 		initDates();
 
-		safetyLogic.turnoutDirectionChanged(Direction.STRAIGHT);
 		safetyLogic.sectionOccupancyChanged(Side.FACING, SectionOccupancy.OCCUPIED);
 		safetyLogic.neighborStatusChanged(Side.STRAIGHT, dateBase, NeighborTSMStatus.DENIED);
 
@@ -103,6 +108,7 @@ public class SafetyLogicDistributedDecisionTest {
 	@Test(timeout = HEARTBEAT_PERIOD_MS * HEARTBEAT_WAIT_NR)
 	public void testFacingDivergentDecision() {
 		initDates();
+
 		safetyLogic.turnoutDirectionChanged(Direction.DIVERGENT);
 		safetyLogic.sectionOccupancyChanged(Side.FACING, SectionOccupancy.OCCUPIED);
 
@@ -118,7 +124,7 @@ public class SafetyLogicDistributedDecisionTest {
 	@Test(timeout = HEARTBEAT_PERIOD_MS * HEARTBEAT_WAIT_NR)
 	public void testStraightStraightDecision() {
 		initDates();
-		safetyLogic.turnoutDirectionChanged(Direction.STRAIGHT);
+
 		safetyLogic.sectionOccupancyChanged(Side.STRAIGHT, SectionOccupancy.OCCUPIED);
 
 		reset(signalMapper);
@@ -133,6 +139,7 @@ public class SafetyLogicDistributedDecisionTest {
 	@Test(timeout = HEARTBEAT_PERIOD_MS * HEARTBEAT_WAIT_NR)
 	public void testDivergentDivergentDecision() {
 		initDates();
+
 		safetyLogic.turnoutDirectionChanged(Direction.DIVERGENT);
 		safetyLogic.sectionOccupancyChanged(Side.DIVERGENT, SectionOccupancy.OCCUPIED);
 
@@ -148,7 +155,7 @@ public class SafetyLogicDistributedDecisionTest {
 	@Test(timeout = HEARTBEAT_PERIOD_MS * HEARTBEAT_WAIT_NR)
 	public void testStraightFacingDecision() {
 		initDates();
-		safetyLogic.turnoutDirectionChanged(Direction.STRAIGHT);
+
 		safetyLogic.sectionOccupancyChanged(Side.STRAIGHT, SectionOccupancy.OCCUPIED);
 
 		reset(signalMapper);
@@ -163,6 +170,7 @@ public class SafetyLogicDistributedDecisionTest {
 	@Test(timeout = HEARTBEAT_PERIOD_MS * HEARTBEAT_WAIT_NR)
 	public void testDivergentFacingDecision() {
 		initDates();
+
 		safetyLogic.turnoutDirectionChanged(Direction.DIVERGENT);
 		safetyLogic.sectionOccupancyChanged(Side.DIVERGENT, SectionOccupancy.OCCUPIED);
 
@@ -178,6 +186,7 @@ public class SafetyLogicDistributedDecisionTest {
 	@Test(timeout = HEARTBEAT_PERIOD_MS * HEARTBEAT_WAIT_NR)
 	public void testAllNeighborDenied() {
 		initDates();
+
 		safetyLogic.neighborStatusChanged(Side.FACING, dateBase, NeighborTSMStatus.DENIED);
 		safetyLogic.neighborStatusChanged(Side.STRAIGHT, dateBase, NeighborTSMStatus.DENIED);
 		safetyLogic.neighborStatusChanged(Side.DIVERGENT, dateBase, NeighborTSMStatus.DENIED);
@@ -196,6 +205,7 @@ public class SafetyLogicDistributedDecisionTest {
 	@Test(timeout = HEARTBEAT_PERIOD_MS * HEARTBEAT_WAIT_NR)
 	public void testStraightEnabledWhenDivergentDenied() {
 		initDates();
+
 		safetyLogic.neighborStatusChanged(Side.DIVERGENT, dateBase, NeighborTSMStatus.DENIED);
 
 		reset(signalMapper);
@@ -211,6 +221,7 @@ public class SafetyLogicDistributedDecisionTest {
 	@Test(timeout = HEARTBEAT_PERIOD_MS * HEARTBEAT_WAIT_NR)
 	public void testDivergentEnabledWhenStraightDenied() {
 		initDates();
+
 		safetyLogic.neighborStatusChanged(Side.STRAIGHT, dateBase, NeighborTSMStatus.DENIED);
 		safetyLogic.turnoutDirectionChanged(Direction.DIVERGENT);
 
