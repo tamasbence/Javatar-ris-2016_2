@@ -32,8 +32,6 @@ public class SafetyLogicDistributedDecisionTest {
 	SignalMapper signalMapper;
 	SafetyLogicImpl safetyLogic;
 	Date dateBase;
-	Date datePlus1Sec;
-	Date datePlus10Sec;
 
 	public SafetyLogicDistributedDecisionTest() {
 
@@ -41,9 +39,7 @@ public class SafetyLogicDistributedDecisionTest {
 
 	public void initDates() {
 		final long epoch = 20000;
-		dateBase = new Date(epoch);
-		datePlus1Sec = new Date(epoch + 1000);
-		datePlus10Sec = new Date(epoch + 10000);
+		dateBase = new Date();
 	}
 
 	@Before
@@ -60,8 +56,6 @@ public class SafetyLogicDistributedDecisionTest {
 		safetyLogic.setSignalMapper(signalMapper);
 
 		dateBase = null;
-		datePlus1Sec = null;
-		datePlus10Sec = null;
 	}
 
 	/**
