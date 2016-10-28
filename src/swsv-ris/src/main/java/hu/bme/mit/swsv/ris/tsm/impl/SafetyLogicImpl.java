@@ -4,11 +4,15 @@ import static hu.bme.mit.swsv.ris.common.Constants.HEARTBEAT_PERIOD_MS;
 import static hu.bme.mit.swsv.ris.common.Constants.HEARTBEAT_WAIT_NR;
 import static hu.bme.mit.swsv.ris.common.Direction.DIVERGENT;
 import static hu.bme.mit.swsv.ris.common.Direction.STRAIGHT;
+import static hu.bme.mit.swsv.ris.common.NeighborTSMStatus.ALLOWED;
+import static hu.bme.mit.swsv.ris.common.NeighborTSMStatus.DENIED;
 import static hu.bme.mit.swsv.ris.common.SectionControl.DISABLED;
 import static hu.bme.mit.swsv.ris.common.SectionControl.ENABLED;
 import static hu.bme.mit.swsv.ris.common.SectionOccupancy.OCCUPIED;
 
 import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import hu.bme.mit.swsv.ris.common.Direction;
 import hu.bme.mit.swsv.ris.common.NeighborTSMInfo;
@@ -32,6 +36,7 @@ public final class SafetyLogicImpl implements SafetyLogic {
 	private Direction turnoutDirection;
 	private SideTriple<NeighborTSMInfo> neighborStatuses;
 
+	private final Timer timer;
 	private SignalMapper signalMapper;
 	private final LoggerWrapper logger;
 
@@ -51,6 +56,8 @@ public final class SafetyLogicImpl implements SafetyLogic {
 		this.sectionOccupancies = sectionOccupancies;
 		this.turnoutDirection = turnoutDirection;
 		this.neighborStatuses = neighborStatuses;
+
+		timer = new Timer();
 	}
 
 	/**
@@ -69,6 +76,7 @@ public final class SafetyLogicImpl implements SafetyLogic {
 		if (!currentOccupancy.equals(occupancy)) {
 			sectionOccupancies = sectionOccupancies.with(side, occupancy);
 			makeDecision();
+			sendHeartBeat();
 		}
 	}
 
@@ -78,6 +86,7 @@ public final class SafetyLogicImpl implements SafetyLogic {
 		if (!turnoutDirection.equals(direction)) {
 			turnoutDirection = direction;
 			makeDecision();
+			sendHeartBeat();
 		}
 	}
 
@@ -92,6 +101,7 @@ public final class SafetyLogicImpl implements SafetyLogic {
 
 		if (!oldStatus.equals(status)) {
 			makeDecision();
+			sendHeartBeat();
 		}
 	}
 
@@ -99,6 +109,7 @@ public final class SafetyLogicImpl implements SafetyLogic {
 	 * Make decision and send control signals to associated sections.
 	 */
 	private void makeDecision() {
+		// TODO: Use here your distributed decision where needed
 		assert signalMapper != null;
 		logger.log(LogEntry.METHOD_ENTER, "makeDecision");
 		final SideTriple<SectionControl> localDecision = makeLocalDecision();
@@ -156,7 +167,7 @@ public final class SafetyLogicImpl implements SafetyLogic {
 	 * @return A triple containing a control for each associated section
 	 */
 	private SideTriple<SectionControl> makeDistributedDecision() {
-		// TODO: implementing this method is a task of the home assignment
+		// TODO: use your distributed decision logic
 		return SideTriple.of(ENABLED, ENABLED, ENABLED);
 	}
 
@@ -190,5 +201,58 @@ public final class SafetyLogicImpl implements SafetyLogic {
 		} else {
 			return DISABLED;
 		}
+	}
+
+	/**
+	 * Send own status to neighbor TSMs as a heartbeat.
+	 */
+	private void sendHeartBeat() {
+		assert signalMapper != null;
+
+		logger.log(LogEntry.METHOD_ENTER, "sendHeartBeat");
+
+		NeighborTSMStatus statusForFacing = ALLOWED;
+		NeighborTSMStatus statusForStraight = ALLOWED;
+		NeighborTSMStatus statusForDivergent = ALLOWED;
+
+		if (sectionOccupancies.getFacing() == OCCUPIED) {
+			statusForFacing = DENIED;
+			if (turnoutDirection == STRAIGHT) {
+				statusForStraight = DENIED;
+			} else {
+				statusForDivergent = DENIED;
+			}
+		}
+
+		if (sectionOccupancies.getStraight() == OCCUPIED) {
+			statusForStraight = DENIED;
+			if (turnoutDirection == STRAIGHT) {
+				statusForFacing = DENIED;
+			}
+		}
+
+		if (sectionOccupancies.getDivergent() == OCCUPIED) {
+			statusForDivergent = DENIED;
+			if (turnoutDirection == DIVERGENT) {
+				statusForFacing = DENIED;
+			}
+		}
+
+		signalMapper.sendStatus(SideTriple.of(statusForFacing, statusForStraight, statusForDivergent));
+	}
+
+	@Override
+	public void startHeartBeat() {
+		timer.schedule(new TimerTask() {
+			@Override
+			public void run() {
+				sendHeartBeat();
+			}
+		}, 0, HEARTBEAT_PERIOD_MS);
+	}
+
+	@Override
+	public void disconnect() {
+		timer.cancel();
 	}
 }

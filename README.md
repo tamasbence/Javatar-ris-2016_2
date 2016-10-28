@@ -63,6 +63,8 @@ To run SonarQube execute the following goal:
 
 - `sonar:sonar`: run SonarQube analysis (if you want test and code coverage results in Sonar then this goal should be called after the test phase)
 
+In order to execute the integration tests, run the `verify` or `integration-test` goals. The project uses a Maven plugin called `build-helper-maven-plugin` to add integration test files and resources to the build. This plugin requires an extension for Eclipse (`m2e connector for build-helper-maven-plugin`), which can be installed using the fixing suggestion provided by the IDE. For more details take a look at [here](http://stackoverflow.com/questions/37159619/installing-m2e-connectors-manually) and [here](http://stackoverflow.com/questions/36824645/how-to-preinstall-eclipse-m2e-configurators-plugin-execution-not-covered-by-lif).
+
 ## Common issues
 
 1. *Tip for Eclipse users:* If the `pom.xml` has errors on lines containing `<execution>` tags, press Ctrl+1 and click "Search for connectors" (or "Discover new m2e connectors" in Eclipse Neon). This will install "m2e connector for build-helper-maven-plugin".
