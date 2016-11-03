@@ -39,4 +39,14 @@ public interface SafetyLogic {
 	 * @param status New status of the associated neighbor
 	 */
 	void neighborStatusChanged(Side side, Date timestamp, NeighborTSMStatus status);
+
+	/**
+	 * Starts sending heartbeats periodically.
+	 */
+	void startHeartBeat();
+
+	/**
+	 * Disconnects the logic.
+	 */
+	void disconnect();
 }

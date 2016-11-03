@@ -1,0 +1,8 @@
+<<<<<<< HEAD
+activeProfiles=
+=======
+activeProfiles=sonar
+>>>>>>> merge_ris_2016
+eclipse.preferences.version=1
+resolveWorkspaceProjects=true
+version=1
