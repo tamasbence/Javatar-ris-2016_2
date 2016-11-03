@@ -4,7 +4,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Callable;
 
+import org.awaitility.Awaitility;
 import org.junit.Assert;
 
 import com.google.gson.Gson;
@@ -85,6 +87,16 @@ public class World {
 
 		// TODO Add testing of dynamics obtained from JSON descriptions
 
+		Awaitility.await().until(allMessageConsumed());
 		tearDown();
+	}
+
+	private Callable<Boolean> allMessageConsumed() {
+		return new Callable<Boolean>() {
+			@Override
+			public Boolean call() throws Exception {
+				return mqtt.allMesageConsumed();
+			}
+		};
 	}
 }
