@@ -29,8 +29,6 @@ public class PahoMQTTClientTester extends AbstractPahoMQTTClient {
 		logger.log(LogEntry.IT_MSG_REC, signal);
 		if (pendingSignals.contains(signal.toString()))
 			pendingSignals.remove(signal.toString());
-		else
-			System.out.println("Tes TEst TEst");
 	}
 
 	@Override
