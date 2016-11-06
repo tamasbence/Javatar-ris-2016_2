@@ -1,0 +1,24 @@
+{
+  "events":[
+     {"type" : "trainAppears", "trainId": "301", "segmentId": "101", "time": "500"},
+     {"type" : "trainAppears", "trainId": "302", "segmentId": "105", "time": "1000"},
+	
+     {"type" : "turnoutChangesDirection", "id": "201", "direction": "divergent", "time": "3000"},
+
+     {"type" : "trainProceeds", "id": "302", "time": "4000"},
+     {"type" : "trainProceeds", "id": "302", "time": "4500"},
+     {"type" : "trainProceeds", "id": "302", "time": "5000"},
+     {"type" : "trainProceeds", "id": "302", "time": "5500"},
+     
+     {"type" : "turnoutChangesDirection", "id": "201", "direction": "straight", "time": "7000"},
+     {"type" : "turnoutChangesDirection", "id": "202", "direction": "divergent", "time": "7500"},
+     {"type" : "turnoutChangesDirection", "id": "203", "direction": "divergent", "time": "8000"},
+     
+     {"type" : "trainProceeds", "id": "301", "time": "9000"},
+     {"type" : "trainProceeds", "id": "301", "time": "9500"},
+     {"type" : "trainProceeds", "id": "301", "time": "10000"},
+     {"type" : "trainProceeds", "id": "301", "time": "10500"},
+     {"type" : "trainProceeds", "id": "301", "time": "11000"},
+     {"type" : "trainProceeds", "id": "301", "time": "11500"}
+  ]
+}
