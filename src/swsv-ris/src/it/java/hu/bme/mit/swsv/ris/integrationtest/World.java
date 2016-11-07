@@ -177,6 +177,8 @@ public class World {
 
 	public void simulateTurnoutChangesDirectionEvent(final TurnoutChangesDirectionEvent e) {
 		mqtt.publish(new TurnoutDirectionSignal(e.id, e.direction));
+
+		getTurnoutWithId(e.id).direction = e.direction;
 	}
 
 	private void simulateEvent(final Event event) throws Exception {
