@@ -52,7 +52,7 @@ public class World {
 	public World(final String trackPath, final String eventsPath, final int id) throws MQException {
 		logger = LoggerWrapper.getLogger("IT_" + id);
 		try {
-			mqtt = new PahoMQTTClientTester(connParams, "initializer");
+			mqtt = new PahoMQTTClientTester(connParams, "initializer", this);
 		} catch (final Exception e1) {
 			logger.log(LogEntry.CANNOT_CONNECT);
 			throw new MQException();
@@ -177,8 +177,6 @@ public class World {
 
 	public void simulateTurnoutChangesDirectionEvent(final TurnoutChangesDirectionEvent e) {
 		mqtt.publish(new TurnoutDirectionSignal(e.id, e.direction));
-
-		getTurnoutWithId(e.id).direction = e.direction;
 	}
 
 	private void simulateEvent(final Event event) throws Exception {
