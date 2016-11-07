@@ -7,5 +7,7 @@ public enum EventType {
 
 	@SerializedName("trainProceeds") TRAINPROCEEDS,
 
-	@SerializedName("turnoutChangesDirection") TURNOUTCHANGESDIRECTION
+	@SerializedName("turnoutChangesDirection") TURNOUTCHANGESDIRECTION,
+
+	@SerializedName("assertSegmentStatus") ASSERTSEGMENTSTATUS
 }

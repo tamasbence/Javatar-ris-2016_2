@@ -11,8 +11,10 @@ public class IntegrationTest {
 		final String trackPath = URLDecoder.decode(IntegrationTest.class.getResource("track.json").getFile(), "UTF-8");
 		final String eventPath = URLDecoder.decode(IntegrationTest.class.getResource("event_case1.json").getFile(),
 				"UTF-8");
+		final String assertsPath = URLDecoder.decode(IntegrationTest.class.getResource("assert_case1.json").getFile(),
+				"UTF-8");
 
-		final World w = new World(trackPath, eventPath, 1);
+		final World w = new World(trackPath, eventPath, assertsPath, 1);
 		w.simulateWorld();
 
 	}
@@ -22,8 +24,10 @@ public class IntegrationTest {
 		final String trackPath = URLDecoder.decode(IntegrationTest.class.getResource("track.json").getFile(), "UTF-8");
 		final String eventPath = URLDecoder.decode(IntegrationTest.class.getResource("event_case2.json").getFile(),
 				"UTF-8");
+		final String assertsPath = URLDecoder.decode(IntegrationTest.class.getResource("assert_case2.json").getFile(),
+				"UTF-8");
 
-		final World w = new World(trackPath, eventPath, 1);
+		final World w = new World(trackPath, eventPath, assertsPath, 1);
 		w.simulateWorld();
 
 	}
@@ -33,8 +37,10 @@ public class IntegrationTest {
 		final String trackPath = URLDecoder.decode(IntegrationTest.class.getResource("track.json").getFile(), "UTF-8");
 		final String eventPath = URLDecoder.decode(IntegrationTest.class.getResource("event_case3.json").getFile(),
 				"UTF-8");
+		final String assertsPath = URLDecoder.decode(IntegrationTest.class.getResource("assert_case3.json").getFile(),
+				"UTF-8");
 
-		final World w = new World(trackPath, eventPath, 1);
+		final World w = new World(trackPath, eventPath, assertsPath, 1);
 		w.simulateWorld();
 
 	}
@@ -44,8 +50,10 @@ public class IntegrationTest {
 		final String trackPath = URLDecoder.decode(IntegrationTest.class.getResource("track.json").getFile(), "UTF-8");
 		final String eventPath = URLDecoder.decode(IntegrationTest.class.getResource("event_case4.json").getFile(),
 				"UTF-8");
+		final String assertsPath = URLDecoder.decode(IntegrationTest.class.getResource("assert_case4.json").getFile(),
+				"UTF-8");
 
-		final World w = new World(trackPath, eventPath, 1);
+		final World w = new World(trackPath, eventPath, assertsPath, 1);
 		w.simulateWorld();
 
 	}

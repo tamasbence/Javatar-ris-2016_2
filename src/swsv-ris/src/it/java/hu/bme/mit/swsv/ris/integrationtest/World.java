@@ -15,6 +15,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import hu.bme.mit.swsv.ris.common.Direction;
+import hu.bme.mit.swsv.ris.common.SectionControl;
 import hu.bme.mit.swsv.ris.common.SectionOccupancy;
 import hu.bme.mit.swsv.ris.common.Side;
 import hu.bme.mit.swsv.ris.common.SideTriple;
@@ -22,9 +23,11 @@ import hu.bme.mit.swsv.ris.common.logging.LogEntry;
 import hu.bme.mit.swsv.ris.common.logging.LoggerWrapper;
 import hu.bme.mit.swsv.ris.common.mq.ConnectionParams;
 import hu.bme.mit.swsv.ris.common.mq.MQException;
+import hu.bme.mit.swsv.ris.integrationtest.assertevents.AssertSegmentStatus;
 import hu.bme.mit.swsv.ris.integrationtest.realworld.Event;
 import hu.bme.mit.swsv.ris.integrationtest.realworld.EventDeserializer;
 import hu.bme.mit.swsv.ris.integrationtest.realworld.Events;
+import hu.bme.mit.swsv.ris.integrationtest.realworld.Segment;
 import hu.bme.mit.swsv.ris.integrationtest.realworld.Track;
 import hu.bme.mit.swsv.ris.integrationtest.realworld.Train;
 import hu.bme.mit.swsv.ris.integrationtest.realworld.TrainAppearsEvent;
@@ -39,6 +42,7 @@ public class World {
 
 	private Track track;
 	private Events events;
+	private final List<AssertSegmentStatus> asserts = new ArrayList<AssertSegmentStatus>();
 	private final Map<Integer, Train> trains;
 
 	private final PahoMQTTClientTester mqtt;
@@ -49,7 +53,32 @@ public class World {
 
 	private final LoggerWrapper logger;
 
-	public World(final String trackPath, final String eventsPath, final int id) throws MQException {
+	private Events mergeEvents(final Events e1, final Events e2) {
+		final Events result = new Events();
+
+		int i1 = 0;
+		int i2 = 0;
+		while (i1 < e1.events.size() && i2 < e2.events.size()) {
+			if (e1.events.get(i1).time < e2.events.get(i2).time) {
+				result.events.add(e1.events.get(i1));
+				i1++;
+			} else {
+				result.events.add(e2.events.get(i2));
+				i2++;
+			}
+		}
+		for (; i1 < e1.events.size(); i1++) {
+			result.events.add(e1.events.get(i1));
+		}
+		for (; i2 < e2.events.size(); i2++) {
+			result.events.add(e2.events.get(i2));
+		}
+
+		return result;
+	}
+
+	public World(final String trackPath, final String eventsPath, final String assertsPath, final int id)
+			throws MQException {
 		logger = LoggerWrapper.getLogger("IT_" + id);
 		try {
 			mqtt = new PahoMQTTClientTester(connParams, "initializer", this);
@@ -61,16 +90,20 @@ public class World {
 		try {
 			final FileReader trackFile = new FileReader(trackPath);
 			final FileReader eventsFile = new FileReader(eventsPath);
+			final FileReader assertsFile = new FileReader(assertsPath);
 			final GsonBuilder gsonBuilder = new GsonBuilder();
 			gsonBuilder.registerTypeAdapter(Event.class, new EventDeserializer());
 			final Gson gson = gsonBuilder.create();
 			track = gson.fromJson(trackFile, Track.class);
 			events = gson.fromJson(eventsFile, Events.class);
+			final Events asserts = gson.fromJson(assertsFile, Events.class);
+			events = mergeEvents(events, asserts);
 		} catch (final FileNotFoundException e) {
 			logger.log(LogEntry.JSON_PARSE_ERROR);
 			Assert.fail("Test file not found in file system.");
 		}
 		trains = new HashMap<Integer, Train>();
+
 	}
 
 	private void initializeControllers() throws Exception {
@@ -98,6 +131,13 @@ public class World {
 		} catch (final MQException e) {
 			logger.log(LogEntry.DISCONNECT_ERROR);
 		}
+	}
+
+	public Segment getSegmentWithId(final int id) {
+		for (final Segment s : track.segments)
+			if (s.id == id)
+				return s;
+		return null;
 	}
 
 	private Turnout getTurnoutWithId(final int id) {
@@ -196,6 +236,10 @@ public class World {
 
 	public void refreshTurnout(final int id, final Direction direction) {
 		getTurnoutWithId(id).direction = direction;
+	}
+
+	public void refreshSegment(final int id, final SectionControl sectionControl) {
+		getSegmentWithId(id).sectionControl = sectionControl;
 	}
 
 	public void simulateWorld() throws Exception {
