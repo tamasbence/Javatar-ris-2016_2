@@ -194,6 +194,10 @@ public class World {
 		}
 	}
 
+	public void refreshTurnout(final int id, final Direction direction) {
+		getTurnoutWithId(id).direction = direction;
+	}
+
 	public void simulateWorld() throws Exception {
 		initializeControllers();
 		initializeTurnouts();
