@@ -1,13 +1,11 @@
 {
   "events":[
-     {"type" : "turnoutChangesDirection", "id": "202", "direction": "divergent", "time": "500"},
-     {"type" : "turnoutChangesDirection", "id": "203", "direction": "divergent", "time": "1000"},
-     {"type" : "trainAppears", "trainId": "301", "segmentId": "101", "time": "1500"},
+     {"type" : "trainAppears", "trainId": "301", "segmentId": "101", "time": "1000"},
+     {"type" : "trainProceeds", "id": "301", "time": "2000"},
      {"type" : "trainProceeds", "id": "301", "time": "3000"},
      {"type" : "trainProceeds", "id": "301", "time": "4000"},
      {"type" : "trainProceeds", "id": "301", "time": "5000"},
      {"type" : "trainProceeds", "id": "301", "time": "6000"},
-     {"type" : "trainProceeds", "id": "301", "time": "7000"},
-     {"type" : "trainProceeds", "id": "301", "time": "8000"}
+     {"type" : "trainProceeds", "id": "301", "time": "7000"}
   ]
 }

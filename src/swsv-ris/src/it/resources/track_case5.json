@@ -1,0 +1,102 @@
+{
+  "segments":[
+    { "id":"101" },
+    { "id":"102" },
+    { "id":"103" },
+    { "id":"104" },
+    { "id":"105" },
+    { "id":"106" },
+    { "id":"107" },
+    { "id":"108" },
+    { "id":"109" },
+    { "id":"110" },
+    { "id":"111" },
+    { "id":"112" }
+  ],
+  "turnouts":[
+    {
+      "id":"201",
+      "elements" :
+      {
+        "facing":"102",
+        "straight":"103",
+        "divergent":"101"
+      },
+      "neighbours":
+      {
+        "facing":"202",
+        "straight":"-1",
+        "divergent":"-1"
+      },
+      "neighbourSides":{
+        "facing":"straight",
+        "straight":"facing",
+        "divergent":"facing"
+      },
+      "direction":"straight"
+    },
+    {
+      "id":"202",
+      "elements":
+      {
+        "facing":"105",
+        "straight":"104",
+        "divergent":"106"
+      },
+      "neighbours":
+      {
+        "facing":"203",
+        "straight":"201",
+        "divergent":"204"
+      },
+      "neighbourSides":{
+        "facing":"facing",
+        "straight":"facing",
+        "divergent":"straight"
+      },
+      "direction":"straight"
+    },
+    {
+      "id":"203",
+      "elements":
+      {
+        "facing":"107",
+        "straight":"108",
+        "divergent":"109"
+      },
+      "neighbours":
+      {
+        "facing":"202",
+        "straight":"-1",
+        "divergent":"-1"
+      },
+      "neighbourSides":{
+        "facing":"facing",
+        "straight":"facing",
+        "divergent":"facing"
+      },
+      "direction":"divergent"
+    },
+    {
+      "id":"204",
+      "elements":
+      {
+        "facing":"110",
+        "straight":"111",
+        "divergent":"112"
+      },
+      "neighbours":
+      {
+        "facing":"-1",
+        "straight":"202",
+        "divergent":"-1"
+      },
+      "neighbourSides":{
+        "facing":"facing",
+        "straight":"divergent",
+        "divergent":"facing"
+      },
+      "direction":"straight"
+    }
+  ]
+}

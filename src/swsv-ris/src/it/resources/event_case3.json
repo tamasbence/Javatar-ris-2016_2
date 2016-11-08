@@ -1,10 +1,10 @@
 {
   "events":[
-     {"type" : "trainAppears", "trainId": "301", "segmentId": "101", "time": "500"},
-     {"type" : "trainProceeds", "id": "301", "time": "3500"},
-     {"type" : "trainProceeds", "id": "301", "time": "4000"},
-     {"type" : "turnoutChangesDirection", "id": "202", "direction": "divergent", "time": "5000"},
-     {"type" : "turnoutChangesDirection", "id": "203", "direction": "divergent", "time": "5500"},
+     {"type" : "trainAppears", "trainId": "301", "segmentId": "101", "time": "1000"},
+     {"type" : "trainProceeds", "id": "301", "time": "2000"},
+     {"type" : "trainProceeds", "id": "301", "time": "3000"},
+     {"type" : "turnoutChangesDirection", "id": "202", "direction": "divergent", "time": "4000"},
+     {"type" : "turnoutChangesDirection", "id": "203", "direction": "divergent", "time": "5000"},
      {"type" : "trainProceeds", "id": "301", "time": "6000"},
      
      {"type" : "trainAppears", "trainId": "302", "segmentId": "105", "time": "7000"},
@@ -14,11 +14,11 @@
 
      {"type" : "turnoutChangesDirection", "id": "202", "direction": "straight", "time": "10000"},
      {"type" : "trainProceeds", "id": "302", "time": "11000"},
+     {"type" : "trainProceeds", "id": "302", "time": "12000"},
      
-     {"type" : "turnoutChangesDirection", "id": "201", "direction": "divergent", "time": "12000"},
-     {"type" : "trainProceeds", "id": "302", "time": "13000"},
+     {"type" : "turnoutChangesDirection", "id": "201", "direction": "divergent", "time": "13000"},
      {"type" : "trainProceeds", "id": "301", "time": "14000"},
-     {"type" : "trainProceeds", "id": "302", "time": "14500"},
-     {"type" : "trainProceeds", "id": "302", "time": "15000"}     
+     {"type" : "trainProceeds", "id": "302", "time": "15000"},
+     {"type" : "trainProceeds", "id": "302", "time": "16000"}     
   ]
 }

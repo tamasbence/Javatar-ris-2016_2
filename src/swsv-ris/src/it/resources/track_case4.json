@@ -1,0 +1,78 @@
+{
+  "segments":[
+    { "id":"101" },
+    { "id":"102" },
+    { "id":"103" },
+    { "id":"104" },
+    { "id":"105" },
+    { "id":"106" },
+    { "id":"107" },
+    { "id":"108" },
+    { "id":"109" }
+  ],
+  "turnouts":[
+    {
+      "id":"201",
+      "elements" :
+      {
+        "facing":"102",
+        "straight":"101",
+        "divergent":"103"
+      },
+      "neighbours":
+      {
+        "facing":"202",
+        "straight":"-1",
+        "divergent":"-1"
+      },
+      "neighbourSides":{
+        "facing":"facing",
+        "straight":"facing",
+        "divergent":"facing"
+      },
+      "direction":"straight"
+    },
+    {
+      "id":"202",
+      "elements":
+      {
+        "facing":"104",
+        "straight":"105",
+        "divergent":"106"
+      },
+      "neighbours":
+      {
+        "facing":"201",
+        "straight":"-1",
+        "divergent":"203"
+      },
+      "neighbourSides":{
+        "facing":"facing",
+        "straight":"facing",
+        "divergent":"divergent"
+      },
+      "direction":"straight"
+    },
+    {
+      "id":"203",
+      "elements":
+      {
+        "facing":"108",
+        "straight":"109",
+        "divergent":"107"
+      },
+      "neighbours":
+      {
+        "facing":"-1",
+        "straight":"-1",
+        "divergent":"202"
+      },
+      "neighbourSides":{
+        "facing":"facing",
+        "straight":"facing",
+        "divergent":"divergent"
+      },
+      "direction":"straight"
+    }
+  ]
+}
