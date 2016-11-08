@@ -10,7 +10,9 @@ public class AssertSegmentStatus extends Assert {
 
 	@Override
 	public void simulate(final World world) {
-		org.junit.Assert.assertEquals(expected, world.getSegmentWithId(id).sectionControl);
+		final SectionControl current = world.getSegmentWithId(id).sectionControl;
+		if (expected != current)
+			org.junit.Assert.fail("Segment with id " + id + " at time " + time + " is expected in state "
+					+ expected.toString() + ", but currently is " + current + ".");
 	}
-
 }

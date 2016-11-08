@@ -8,6 +8,7 @@ import hu.bme.mit.swsv.ris.common.logging.LoggerWrapper;
 import hu.bme.mit.swsv.ris.common.mq.AbstractPahoMQTTClient;
 import hu.bme.mit.swsv.ris.common.mq.ConnectionParams;
 import hu.bme.mit.swsv.ris.signals.AbstractSignal;
+import hu.bme.mit.swsv.ris.signals.SectionControlSignal;
 import hu.bme.mit.swsv.ris.signals.TurnoutDirectionSignal;
 
 public class PahoMQTTClientTester extends AbstractPahoMQTTClient {
@@ -37,6 +38,10 @@ public class PahoMQTTClientTester extends AbstractPahoMQTTClient {
 		if (signal instanceof TurnoutDirectionSignal) {
 			final TurnoutDirectionSignal turnoutDirectionSignal = (TurnoutDirectionSignal) signal;
 			world.refreshTurnout(turnoutDirectionSignal.getSenderId(), turnoutDirectionSignal.getTurnoutDirection());
+		}
+		if (signal instanceof SectionControlSignal) {
+			final SectionControlSignal sectionControlSignal = (SectionControlSignal) signal;
+			world.refreshSegment(sectionControlSignal.getTargetId(), sectionControlSignal.getSectionControl());
 		}
 	}
 
