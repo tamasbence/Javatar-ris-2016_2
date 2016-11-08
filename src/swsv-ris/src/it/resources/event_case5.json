@@ -16,12 +16,12 @@
      {"type" : "turnoutChangesDirection", "id": "203", "direction": "straight", "time": "10000"},
      {"type" : "trainProceeds", "id": "301", "time": "11000"},
      {"type" : "trainProceeds", "id": "301", "time": "12000"},
-     {"type" : "trainProceeds", "id": "302", "time": "13000"},
+     {"type" : "trainProceeds", "id": "301", "time": "13000"},
+     {"type" : "trainProceeds", "id": "302", "time": "14000"},
      
-     {"type" : "turnoutChangesDirection", "id": "202", "direction": "straight", "time": "14000"},
-     {"type" : "turnoutChangesDirection", "id": "201", "direction": "straight", "time": "15000"},
+     {"type" : "turnoutChangesDirection", "id": "202", "direction": "straight", "time": "15000"},
+     {"type" : "turnoutChangesDirection", "id": "201", "direction": "straight", "time": "16000"},
      
-     {"type" : "trainProceeds", "id": "301", "time": "16000"},
      {"type" : "trainProceeds", "id": "302", "time": "17000"},
      {"type" : "trainProceeds", "id": "302", "time": "18000"},
      {"type" : "trainProceeds", "id": "302", "time": "19000"},
