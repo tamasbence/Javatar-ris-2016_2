@@ -75,4 +75,18 @@ public class IntegrationTest {
 		w.simulateWorld();
 
 	}
+
+	@Test
+	public void Test6_FAILING_TrainMovement_BetweenSections() throws Exception {
+		final String trackPath = URLDecoder.decode(IntegrationTest.class.getResource("track_case1.json").getFile(),
+				"UTF-8");
+		final String eventPath = URLDecoder.decode(IntegrationTest.class.getResource("event_case1.json").getFile(),
+				"UTF-8");
+		final String assertsPath = URLDecoder.decode(IntegrationTest.class.getResource("assert_case6.json").getFile(),
+				"UTF-8");
+
+		final World w = new World(trackPath, eventPath, assertsPath, 1);
+		w.simulateWorld();
+
+	}
 }
