@@ -1,0 +1,360 @@
+10:46:30.581 [main] INFO  TSM_201 - 300 - Component started.
+10:46:30.597 [main] INFO  TSM_202 - 300 - Component started.
+10:46:30.597 [main] INFO  TSM_203 - 300 - Component started.
+10:46:30.597 [main] INFO  initializer - 303 - Message published: TurnoutDirectionSignal(sender: 201, direction: STRAIGHT).
+10:46:30.597 [main] INFO  initializer - 303 - Message published: TurnoutDirectionSignal(sender: 202, direction: STRAIGHT).
+10:46:30.597 [main] INFO  initializer - 303 - Message published: TurnoutDirectionSignal(sender: 203, direction: STRAIGHT).
+10:46:30.597 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:30 CET 2016).
+10:46:30.597 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: ALLOWED, timestamp: Wed Nov 09 10:46:30 CET 2016).
+10:46:30.597 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:30 CET 2016).
+10:46:30.597 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 203 (DIVERGENT), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:30 CET 2016).
+10:46:30.597 [MQTT Call: initializer] INFO  initializer - 304 - Message received: TurnoutDirectionSignal(sender: 201, direction: STRAIGHT).
+10:46:30.612 [MQTT Call: initializer] INFO  initializer - 304 - Message received: TurnoutDirectionSignal(sender: 202, direction: STRAIGHT).
+10:46:30.612 [MQTT Call: initializer] INFO  initializer - 304 - Message received: TurnoutDirectionSignal(sender: 203, direction: STRAIGHT).
+10:46:30.612 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 104, control: ENABLED).
+10:46:30.612 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 102, control: ENABLED).
+10:46:30.612 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 105, control: ENABLED).
+10:46:30.612 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 101, control: ENABLED).
+10:46:30.612 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 106, control: ENABLED).
+10:46:30.612 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: ALLOWED, timestamp: Wed Nov 09 10:46:30 CET 2016).
+10:46:30.612 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:30 CET 2016).
+10:46:30.612 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 103, control: ENABLED).
+10:46:30.612 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 203, target: 108, control: ENABLED).
+10:46:30.612 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 203, target: 109, control: ENABLED).
+10:46:30.612 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 203, target: 107, control: ENABLED).
+10:46:30.612 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:30 CET 2016).
+10:46:30.612 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 203 (DIVERGENT), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:30 CET 2016).
+10:46:30.612 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 104, control: ENABLED).
+10:46:30.612 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 105, control: ENABLED).
+10:46:30.612 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 106, control: ENABLED).
+10:46:30.612 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: ALLOWED, timestamp: Wed Nov 09 10:46:30 CET 2016).
+10:46:30.612 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:30 CET 2016).
+10:46:31.581 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:31 CET 2016).
+10:46:31.604 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: ALLOWED, timestamp: Wed Nov 09 10:46:31 CET 2016).
+10:46:31.604 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:31 CET 2016).
+10:46:31.620 [main] INFO  initializer - 303 - Message published: SectionOccupancySignal(sender: 101, occupancy: OCCUPIED).
+10:46:31.620 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 203 (DIVERGENT), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:31 CET 2016).
+10:46:31.620 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionOccupancySignal(sender: 101, occupancy: OCCUPIED).
+10:46:31.620 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 102, control: ENABLED).
+10:46:31.620 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 101, control: ENABLED).
+10:46:31.620 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 103, control: ENABLED).
+10:46:31.620 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: DENIED, timestamp: Wed Nov 09 10:46:31 CET 2016).
+10:46:31.635 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 104, control: ENABLED).
+10:46:31.635 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 105, control: ENABLED).
+10:46:31.635 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 106, control: ENABLED).
+10:46:31.635 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: ALLOWED, timestamp: Wed Nov 09 10:46:31 CET 2016).
+10:46:31.635 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:31 CET 2016).
+10:46:32.588 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: DENIED, timestamp: Wed Nov 09 10:46:32 CET 2016).
+10:46:32.611 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 203 (DIVERGENT), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:32 CET 2016).
+10:46:32.611 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: ALLOWED, timestamp: Wed Nov 09 10:46:32 CET 2016).
+10:46:32.611 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:32 CET 2016).
+10:46:32.627 [main] INFO  initializer - 303 - Message published: SectionOccupancySignal(sender: 101, occupancy: FREE).
+10:46:32.627 [main] INFO  initializer - 303 - Message published: SectionOccupancySignal(sender: 102, occupancy: OCCUPIED).
+10:46:32.627 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionOccupancySignal(sender: 101, occupancy: FREE).
+10:46:32.627 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionOccupancySignal(sender: 102, occupancy: OCCUPIED).
+10:46:32.627 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 102, control: ENABLED).
+10:46:32.627 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 101, control: ENABLED).
+10:46:32.627 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 103, control: ENABLED).
+10:46:32.642 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:32 CET 2016).
+10:46:32.642 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 102, control: ENABLED).
+10:46:32.642 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 101, control: ENABLED).
+10:46:32.642 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 103, control: ENABLED).
+10:46:32.642 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: DENIED, timestamp: Wed Nov 09 10:46:32 CET 2016).
+10:46:32.642 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 104, control: ENABLED).
+10:46:32.642 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 105, control: ENABLED).
+10:46:32.658 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 106, control: ENABLED).
+10:46:32.658 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: ALLOWED, timestamp: Wed Nov 09 10:46:32 CET 2016).
+10:46:32.658 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:32 CET 2016).
+10:46:32.658 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 104, control: ENABLED).
+10:46:32.658 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 105, control: ENABLED).
+10:46:32.658 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 106, control: ENABLED).
+10:46:32.658 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: ALLOWED, timestamp: Wed Nov 09 10:46:32 CET 2016).
+10:46:32.658 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:32 CET 2016).
+10:46:33.595 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: DENIED, timestamp: Wed Nov 09 10:46:33 CET 2016).
+10:46:33.618 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: ALLOWED, timestamp: Wed Nov 09 10:46:33 CET 2016).
+10:46:33.618 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 203 (DIVERGENT), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:33 CET 2016).
+10:46:33.618 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:33 CET 2016).
+10:46:33.634 [main] INFO  initializer - 303 - Message published: SectionOccupancySignal(sender: 102, occupancy: FREE).
+10:46:33.634 [main] INFO  initializer - 303 - Message published: SectionOccupancySignal(sender: 104, occupancy: OCCUPIED).
+10:46:33.634 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionOccupancySignal(sender: 102, occupancy: FREE).
+10:46:33.634 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionOccupancySignal(sender: 104, occupancy: OCCUPIED).
+10:46:33.634 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 102, control: ENABLED).
+10:46:33.634 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 101, control: ENABLED).
+10:46:33.634 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 104, control: DISABLED).
+10:46:33.634 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 105, control: ENABLED).
+10:46:33.634 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 103, control: ENABLED).
+10:46:33.634 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 106, control: ENABLED).
+10:46:33.649 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:33 CET 2016).
+10:46:33.649 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: DENIED, timestamp: Wed Nov 09 10:46:33 CET 2016).
+10:46:33.649 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:33 CET 2016).
+10:46:33.649 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 104, control: ENABLED).
+10:46:33.649 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 105, control: ENABLED).
+10:46:33.649 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 106, control: ENABLED).
+10:46:33.649 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: DENIED, timestamp: Wed Nov 09 10:46:33 CET 2016).
+10:46:33.649 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:33 CET 2016).
+10:46:33.649 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 102, control: ENABLED).
+10:46:33.649 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 101, control: ENABLED).
+10:46:33.649 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 103, control: ENABLED).
+10:46:33.649 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:33 CET 2016).
+10:46:34.602 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:34 CET 2016).
+10:46:34.625 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 203 (DIVERGENT), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:34 CET 2016).
+10:46:34.625 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: DENIED, timestamp: Wed Nov 09 10:46:34 CET 2016).
+10:46:34.625 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:34 CET 2016).
+10:46:34.640 [main] INFO  initializer - 303 - Message published: TurnoutDirectionSignal(sender: 202, direction: DIVERGENT).
+10:46:34.640 [MQTT Call: initializer] INFO  initializer - 304 - Message received: TurnoutDirectionSignal(sender: 202, direction: DIVERGENT).
+10:46:34.640 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 104, control: ENABLED).
+10:46:34.640 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 105, control: ENABLED).
+10:46:34.640 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 106, control: ENABLED).
+10:46:34.640 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: DENIED, timestamp: Wed Nov 09 10:46:34 CET 2016).
+10:46:34.640 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: DENIED, timestamp: Wed Nov 09 10:46:34 CET 2016).
+10:46:34.656 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 203, target: 108, control: ENABLED).
+10:46:34.656 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 203, target: 109, control: ENABLED).
+10:46:34.656 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 203, target: 107, control: ENABLED).
+10:46:34.656 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 203 (DIVERGENT), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:34 CET 2016).
+10:46:35.609 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:35 CET 2016).
+10:46:35.631 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: DENIED, timestamp: Wed Nov 09 10:46:35 CET 2016).
+10:46:35.631 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 203 (DIVERGENT), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:35 CET 2016).
+10:46:35.631 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: DENIED, timestamp: Wed Nov 09 10:46:35 CET 2016).
+10:46:35.647 [main] INFO  initializer - 303 - Message published: TurnoutDirectionSignal(sender: 203, direction: DIVERGENT).
+10:46:35.647 [MQTT Call: initializer] INFO  initializer - 304 - Message received: TurnoutDirectionSignal(sender: 203, direction: DIVERGENT).
+10:46:35.647 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 203, target: 108, control: ENABLED).
+10:46:35.647 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 203, target: 109, control: ENABLED).
+10:46:35.647 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 203, target: 107, control: ENABLED).
+10:46:35.647 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 203 (DIVERGENT), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:35 CET 2016).
+10:46:36.615 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:36 CET 2016).
+10:46:36.637 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 203 (DIVERGENT), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:36 CET 2016).
+10:46:36.637 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: DENIED, timestamp: Wed Nov 09 10:46:36 CET 2016).
+10:46:36.637 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: DENIED, timestamp: Wed Nov 09 10:46:36 CET 2016).
+10:46:36.652 [main] INFO  initializer - 303 - Message published: SectionOccupancySignal(sender: 104, occupancy: FREE).
+10:46:36.652 [main] INFO  initializer - 303 - Message published: SectionOccupancySignal(sender: 106, occupancy: OCCUPIED).
+10:46:36.652 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionOccupancySignal(sender: 104, occupancy: FREE).
+10:46:36.652 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionOccupancySignal(sender: 106, occupancy: OCCUPIED).
+10:46:36.652 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 104, control: ENABLED).
+10:46:36.652 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 105, control: ENABLED).
+10:46:36.652 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 106, control: ENABLED).
+10:46:36.652 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: ALLOWED, timestamp: Wed Nov 09 10:46:36 CET 2016).
+10:46:36.652 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:36 CET 2016).
+10:46:36.652 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 104, control: ENABLED).
+10:46:36.652 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 105, control: ENABLED).
+10:46:36.668 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 106, control: ENABLED).
+10:46:36.668 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 102, control: ENABLED).
+10:46:36.668 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: DENIED, timestamp: Wed Nov 09 10:46:36 CET 2016).
+10:46:36.668 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 101, control: ENABLED).
+10:46:36.668 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 203, target: 108, control: ENABLED).
+10:46:36.668 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 103, control: ENABLED).
+10:46:36.668 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: DENIED, timestamp: Wed Nov 09 10:46:36 CET 2016).
+10:46:36.668 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:36 CET 2016).
+10:46:36.668 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 203, target: 109, control: ENABLED).
+10:46:36.668 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 203, target: 107, control: ENABLED).
+10:46:36.668 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 203 (DIVERGENT), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:36 CET 2016).
+10:46:36.684 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 102, control: ENABLED).
+10:46:36.684 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 101, control: ENABLED).
+10:46:36.684 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 103, control: ENABLED).
+10:46:36.684 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:36 CET 2016).
+10:46:36.684 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 203, target: 108, control: ENABLED).
+10:46:36.684 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 203, target: 109, control: ENABLED).
+10:46:36.684 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 203, target: 107, control: ENABLED).
+10:46:36.684 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 203 (DIVERGENT), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:36 CET 2016).
+10:46:37.621 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:37 CET 2016).
+10:46:37.642 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 203 (DIVERGENT), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:37 CET 2016).
+10:46:37.642 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: DENIED, timestamp: Wed Nov 09 10:46:37 CET 2016).
+10:46:37.642 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: DENIED, timestamp: Wed Nov 09 10:46:37 CET 2016).
+10:46:37.658 [main] INFO  initializer - 303 - Message published: SectionOccupancySignal(sender: 105, occupancy: OCCUPIED).
+10:46:37.658 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionOccupancySignal(sender: 105, occupancy: OCCUPIED).
+10:46:37.658 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 104, control: ENABLED).
+10:46:37.658 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 105, control: DISABLED).
+10:46:37.658 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 106, control: ENABLED).
+10:46:37.658 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: DENIED, timestamp: Wed Nov 09 10:46:37 CET 2016).
+10:46:37.658 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: DENIED, timestamp: Wed Nov 09 10:46:37 CET 2016).
+10:46:38.627 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:38 CET 2016).
+10:46:38.648 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: DENIED, timestamp: Wed Nov 09 10:46:38 CET 2016).
+10:46:38.648 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 203 (DIVERGENT), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:38 CET 2016).
+10:46:38.648 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: DENIED, timestamp: Wed Nov 09 10:46:38 CET 2016).
+10:46:38.664 [main] INFO  initializer - 303 - Message published: SectionOccupancySignal(sender: 106, occupancy: FREE).
+10:46:38.664 [main] INFO  initializer - 303 - Message published: SectionOccupancySignal(sender: 107, occupancy: OCCUPIED).
+10:46:38.664 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionOccupancySignal(sender: 106, occupancy: FREE).
+10:46:38.664 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionOccupancySignal(sender: 107, occupancy: OCCUPIED).
+10:46:38.664 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 104, control: ENABLED).
+10:46:38.664 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 105, control: DISABLED).
+10:46:38.664 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 203, target: 108, control: ENABLED).
+10:46:38.664 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 106, control: ENABLED).
+10:46:38.664 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 203, target: 109, control: ENABLED).
+10:46:38.664 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 203, target: 107, control: DISABLED).
+10:46:38.664 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: ALLOWED, timestamp: Wed Nov 09 10:46:38 CET 2016).
+10:46:38.664 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 203 (DIVERGENT), target: 202, status: DENIED, timestamp: Wed Nov 09 10:46:38 CET 2016).
+10:46:38.664 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:38 CET 2016).
+10:46:38.680 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 102, control: ENABLED).
+10:46:38.680 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 203, target: 108, control: ENABLED).
+10:46:38.680 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 203, target: 109, control: ENABLED).
+10:46:38.680 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 104, control: ENABLED).
+10:46:38.680 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 101, control: ENABLED).
+10:46:38.680 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 203, target: 107, control: ENABLED).
+10:46:38.680 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 103, control: ENABLED).
+10:46:38.680 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 203 (DIVERGENT), target: 202, status: DENIED, timestamp: Wed Nov 09 10:46:38 CET 2016).
+10:46:38.680 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 105, control: DISABLED).
+10:46:38.680 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 106, control: ENABLED).
+10:46:38.680 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: ALLOWED, timestamp: Wed Nov 09 10:46:38 CET 2016).
+10:46:38.680 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:38 CET 2016).
+10:46:38.695 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:38 CET 2016).
+10:46:39.633 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:39 CET 2016).
+10:46:39.654 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 203 (DIVERGENT), target: 202, status: DENIED, timestamp: Wed Nov 09 10:46:39 CET 2016).
+10:46:39.654 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: ALLOWED, timestamp: Wed Nov 09 10:46:39 CET 2016).
+10:46:39.654 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:39 CET 2016).
+10:46:39.670 [main] INFO  initializer - 303 - Message published: SectionOccupancySignal(sender: 107, occupancy: FREE).
+10:46:39.670 [main] INFO  initializer - 303 - Message published: SectionOccupancySignal(sender: 108, occupancy: OCCUPIED).
+10:46:39.670 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionOccupancySignal(sender: 107, occupancy: FREE).
+10:46:39.670 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionOccupancySignal(sender: 108, occupancy: OCCUPIED).
+10:46:39.670 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 203, target: 108, control: ENABLED).
+10:46:39.670 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 203, target: 109, control: ENABLED).
+10:46:39.670 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 203, target: 107, control: ENABLED).
+10:46:39.670 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 203 (DIVERGENT), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:39 CET 2016).
+10:46:39.670 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 203, target: 108, control: ENABLED).
+10:46:39.670 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 203, target: 109, control: ENABLED).
+10:46:39.670 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 203, target: 107, control: ENABLED).
+10:46:39.670 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 203 (DIVERGENT), target: 202, status: DENIED, timestamp: Wed Nov 09 10:46:39 CET 2016).
+10:46:39.685 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 104, control: ENABLED).
+10:46:39.685 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 105, control: DISABLED).
+10:46:39.685 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 106, control: ENABLED).
+10:46:39.685 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: ALLOWED, timestamp: Wed Nov 09 10:46:39 CET 2016).
+10:46:39.685 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:39 CET 2016).
+10:46:39.685 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 104, control: ENABLED).
+10:46:39.685 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 105, control: DISABLED).
+10:46:39.685 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 106, control: ENABLED).
+10:46:39.685 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: ALLOWED, timestamp: Wed Nov 09 10:46:39 CET 2016).
+10:46:39.685 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:39 CET 2016).
+10:46:40.639 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:40 CET 2016).
+10:46:40.661 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: ALLOWED, timestamp: Wed Nov 09 10:46:40 CET 2016).
+10:46:40.661 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:40 CET 2016).
+10:46:40.661 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 203 (DIVERGENT), target: 202, status: DENIED, timestamp: Wed Nov 09 10:46:40 CET 2016).
+10:46:40.677 [main] INFO  initializer - 303 - Message published: TurnoutDirectionSignal(sender: 202, direction: STRAIGHT).
+10:46:40.677 [MQTT Call: initializer] INFO  initializer - 304 - Message received: TurnoutDirectionSignal(sender: 202, direction: STRAIGHT).
+10:46:40.677 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 104, control: ENABLED).
+10:46:40.677 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 105, control: ENABLED).
+10:46:40.677 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 106, control: ENABLED).
+10:46:40.677 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: DENIED, timestamp: Wed Nov 09 10:46:40 CET 2016).
+10:46:40.677 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:40 CET 2016).
+10:46:40.677 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 102, control: ENABLED).
+10:46:40.677 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 101, control: ENABLED).
+10:46:40.677 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 103, control: ENABLED).
+10:46:40.677 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:40 CET 2016).
+10:46:41.650 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:41 CET 2016).
+10:46:41.668 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 203 (DIVERGENT), target: 202, status: DENIED, timestamp: Wed Nov 09 10:46:41 CET 2016).
+10:46:41.668 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: DENIED, timestamp: Wed Nov 09 10:46:41 CET 2016).
+10:46:41.668 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:41 CET 2016).
+10:46:41.683 [main] INFO  initializer - 303 - Message published: SectionOccupancySignal(sender: 105, occupancy: FREE).
+10:46:41.683 [main] INFO  initializer - 303 - Message published: SectionOccupancySignal(sender: 104, occupancy: OCCUPIED).
+10:46:41.683 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionOccupancySignal(sender: 105, occupancy: FREE).
+10:46:41.683 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionOccupancySignal(sender: 104, occupancy: OCCUPIED).
+10:46:41.683 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 104, control: ENABLED).
+10:46:41.683 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 105, control: ENABLED).
+10:46:41.683 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 106, control: ENABLED).
+10:46:41.683 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: ALLOWED, timestamp: Wed Nov 09 10:46:41 CET 2016).
+10:46:41.683 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:41 CET 2016).
+10:46:41.683 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 104, control: ENABLED).
+10:46:41.683 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 105, control: ENABLED).
+10:46:41.683 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 106, control: ENABLED).
+10:46:41.683 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: DENIED, timestamp: Wed Nov 09 10:46:41 CET 2016).
+10:46:41.699 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:41 CET 2016).
+10:46:41.699 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 102, control: ENABLED).
+10:46:41.699 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 101, control: ENABLED).
+10:46:41.699 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 103, control: ENABLED).
+10:46:41.699 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:41 CET 2016).
+10:46:41.699 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 102, control: ENABLED).
+10:46:41.699 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 101, control: ENABLED).
+10:46:41.699 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 103, control: ENABLED).
+10:46:41.699 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:41 CET 2016).
+10:46:42.652 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:42 CET 2016).
+10:46:42.673 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: DENIED, timestamp: Wed Nov 09 10:46:42 CET 2016).
+10:46:42.673 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 203 (DIVERGENT), target: 202, status: DENIED, timestamp: Wed Nov 09 10:46:42 CET 2016).
+10:46:42.673 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:42 CET 2016).
+10:46:42.689 [main] INFO  initializer - 303 - Message published: SectionOccupancySignal(sender: 104, occupancy: FREE).
+10:46:42.689 [main] INFO  initializer - 303 - Message published: SectionOccupancySignal(sender: 102, occupancy: OCCUPIED).
+10:46:42.689 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionOccupancySignal(sender: 104, occupancy: FREE).
+10:46:42.689 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionOccupancySignal(sender: 102, occupancy: OCCUPIED).
+10:46:42.689 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 104, control: ENABLED).
+10:46:42.689 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 102, control: DISABLED).
+10:46:42.689 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 105, control: ENABLED).
+10:46:42.689 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 106, control: ENABLED).
+10:46:42.689 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 101, control: ENABLED).
+10:46:42.689 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: ALLOWED, timestamp: Wed Nov 09 10:46:42 CET 2016).
+10:46:42.689 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 103, control: ENABLED).
+10:46:42.689 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: DENIED, timestamp: Wed Nov 09 10:46:42 CET 2016).
+10:46:42.689 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:42 CET 2016).
+10:46:42.689 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 104, control: ENABLED).
+10:46:42.689 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 102, control: ENABLED).
+10:46:42.689 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 105, control: ENABLED).
+10:46:42.689 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 106, control: ENABLED).
+10:46:42.689 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: ALLOWED, timestamp: Wed Nov 09 10:46:42 CET 2016).
+10:46:42.689 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 101, control: ENABLED).
+10:46:42.689 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 103, control: ENABLED).
+10:46:42.705 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:42 CET 2016).
+10:46:42.705 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: DENIED, timestamp: Wed Nov 09 10:46:42 CET 2016).
+10:46:43.658 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: DENIED, timestamp: Wed Nov 09 10:46:43 CET 2016).
+10:46:43.679 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: ALLOWED, timestamp: Wed Nov 09 10:46:43 CET 2016).
+10:46:43.679 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:43 CET 2016).
+10:46:43.679 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 203 (DIVERGENT), target: 202, status: DENIED, timestamp: Wed Nov 09 10:46:43 CET 2016).
+10:46:43.695 [main] INFO  initializer - 303 - Message published: TurnoutDirectionSignal(sender: 201, direction: DIVERGENT).
+10:46:43.695 [MQTT Call: initializer] INFO  initializer - 304 - Message received: TurnoutDirectionSignal(sender: 201, direction: DIVERGENT).
+10:46:43.695 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 102, control: ENABLED).
+10:46:43.695 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 101, control: ENABLED).
+10:46:43.695 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 103, control: ENABLED).
+10:46:43.695 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: DENIED, timestamp: Wed Nov 09 10:46:43 CET 2016).
+10:46:44.664 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: DENIED, timestamp: Wed Nov 09 10:46:44 CET 2016).
+10:46:44.685 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 203 (DIVERGENT), target: 202, status: DENIED, timestamp: Wed Nov 09 10:46:44 CET 2016).
+10:46:44.685 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: ALLOWED, timestamp: Wed Nov 09 10:46:44 CET 2016).
+10:46:44.685 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:44 CET 2016).
+10:46:44.700 [main] INFO  initializer - 303 - Message published: SectionOccupancySignal(sender: 108, occupancy: FREE).
+10:46:44.700 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionOccupancySignal(sender: 108, occupancy: FREE).
+10:46:44.700 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 203, target: 108, control: ENABLED).
+10:46:44.700 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 203, target: 109, control: ENABLED).
+10:46:44.700 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 203, target: 107, control: ENABLED).
+10:46:44.700 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 203 (DIVERGENT), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:44 CET 2016).
+10:46:44.700 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 104, control: ENABLED).
+10:46:44.700 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 105, control: ENABLED).
+10:46:44.700 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 106, control: ENABLED).
+10:46:44.700 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: ALLOWED, timestamp: Wed Nov 09 10:46:44 CET 2016).
+10:46:44.716 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:44 CET 2016).
+10:46:45.669 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: DENIED, timestamp: Wed Nov 09 10:46:45 CET 2016).
+10:46:45.690 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: ALLOWED, timestamp: Wed Nov 09 10:46:45 CET 2016).
+10:46:45.690 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 203 (DIVERGENT), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:45 CET 2016).
+10:46:45.690 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:45 CET 2016).
+10:46:45.721 [main] INFO  initializer - 303 - Message published: SectionOccupancySignal(sender: 102, occupancy: FREE).
+10:46:45.721 [main] INFO  initializer - 303 - Message published: SectionOccupancySignal(sender: 103, occupancy: OCCUPIED).
+10:46:45.721 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionOccupancySignal(sender: 102, occupancy: FREE).
+10:46:45.721 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionOccupancySignal(sender: 103, occupancy: OCCUPIED).
+10:46:45.721 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 102, control: ENABLED).
+10:46:45.721 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 101, control: ENABLED).
+10:46:45.721 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 103, control: ENABLED).
+10:46:45.721 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:45 CET 2016).
+10:46:45.721 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 102, control: ENABLED).
+10:46:45.737 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 101, control: ENABLED).
+10:46:45.737 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 103, control: ENABLED).
+10:46:45.737 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: DENIED, timestamp: Wed Nov 09 10:46:45 CET 2016).
+10:46:45.737 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 104, control: ENABLED).
+10:46:45.737 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 105, control: ENABLED).
+10:46:45.737 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 106, control: ENABLED).
+10:46:45.737 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: ALLOWED, timestamp: Wed Nov 09 10:46:45 CET 2016).
+10:46:45.737 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:45 CET 2016).
+10:46:45.737 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 104, control: ENABLED).
+10:46:45.737 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 105, control: ENABLED).
+10:46:45.737 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 106, control: ENABLED).
+10:46:45.737 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: ALLOWED, timestamp: Wed Nov 09 10:46:45 CET 2016).
+10:46:45.737 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:45 CET 2016).
+10:46:46.674 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: DENIED, timestamp: Wed Nov 09 10:46:46 CET 2016).
+10:46:46.695 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: ALLOWED, timestamp: Wed Nov 09 10:46:46 CET 2016).
+10:46:46.695 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:46 CET 2016).
+10:46:46.695 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 203 (DIVERGENT), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:46 CET 2016).
+10:46:46.727 [main] INFO  initializer - 303 - Message published: SectionOccupancySignal(sender: 103, occupancy: FREE).
+10:46:46.727 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionOccupancySignal(sender: 103, occupancy: FREE).
+10:46:46.727 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 102, control: ENABLED).
+10:46:46.727 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 101, control: ENABLED).
+10:46:46.727 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 201, target: 103, control: ENABLED).
+10:46:46.727 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 201 (FACING), target: 202, status: ALLOWED, timestamp: Wed Nov 09 10:46:46 CET 2016).
+10:46:46.727 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 104, control: ENABLED).
+10:46:46.727 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 105, control: ENABLED).
+10:46:46.727 [MQTT Call: initializer] INFO  initializer - 304 - Message received: SectionControlSignal(sender: 202, target: 106, control: ENABLED).
+10:46:46.742 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (FACING), target: 201, status: ALLOWED, timestamp: Wed Nov 09 10:46:46 CET 2016).
+10:46:46.742 [MQTT Call: initializer] INFO  initializer - 304 - Message received: HeartBeatSignal(sender: 202 (DIVERGENT), target: 203, status: ALLOWED, timestamp: Wed Nov 09 10:46:46 CET 2016).
+10:46:46.898 [main] INFO  TSM_201 - 301 - Component stopped.
+10:46:46.898 [main] INFO  TSM_202 - 301 - Component stopped.
+10:46:46.898 [main] INFO  TSM_203 - 301 - Component stopped.
