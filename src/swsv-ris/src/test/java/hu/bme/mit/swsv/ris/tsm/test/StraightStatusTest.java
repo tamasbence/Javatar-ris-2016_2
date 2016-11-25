@@ -20,7 +20,7 @@ import hu.bme.mit.swsv.ris.common.logging.LoggerWrapper;
 import hu.bme.mit.swsv.ris.tsm.SignalMapper;
 import hu.bme.mit.swsv.ris.tsm.impl.SafetyLogicImpl;
 
-@GraphWalker(start = "e_init", pathGenerator = RandomPath.class, stopCondition = EdgeCoverage.class, stopConditionValue = "100")
+@GraphWalker(start = "e_init", pathGenerator = RandomPath.class, stopCondition = EdgeCoverage.class, stopConditionValue = "2")
 public class StraightStatusTest extends ExecutionContext implements StraightStatus {
 
 	public SafetyLogicImpl safetyLogic;
@@ -40,9 +40,12 @@ public class StraightStatusTest extends ExecutionContext implements StraightStat
 		signalMapper = mock(SignalMapper.class);
 		safetyLogic.setSignalMapper(signalMapper);
 		initializing = true;
+
+		System.out.println("constructor");
 	}
 
 	public void directionchange() {
+		System.out.println("directionChange");
 		if (turnoutDirection == Direction.STRAIGHT)
 			turnoutDirection = Direction.DIVERGENT;
 		else
@@ -51,6 +54,7 @@ public class StraightStatusTest extends ExecutionContext implements StraightStat
 	}
 
 	public void occupancyChange(final Side side) {
+		System.out.println("occupancyChange");
 		if (sectionOccupancies.get(side) == SectionOccupancy.FREE)
 			sectionOccupancies = sectionOccupancies.with(side, SectionOccupancy.OCCUPIED);
 		else
@@ -60,6 +64,7 @@ public class StraightStatusTest extends ExecutionContext implements StraightStat
 
 	@Override
 	public void v_denied() {
+		System.out.println("v_denied");
 		final SideTriple<NeighborTSMStatus> temp = SideTriple.of(NeighborTSMStatus.ALLOWED, NeighborTSMStatus.ALLOWED,
 				NeighborTSMStatus.ALLOWED);
 		final ArgumentCaptor<SideTriple<NeighborTSMStatus>> captor = ArgumentCaptor.forClass(temp.getClass());
@@ -69,46 +74,54 @@ public class StraightStatusTest extends ExecutionContext implements StraightStat
 
 	@Override
 	public void e_straightchange4() {
+		System.out.println("1");
 		occupancyChange(Side.STRAIGHT);
 	}
 
 	@Override
 	public void e_directionchange3() {
+		System.out.println("2");
 		directionchange();
 	}
 
 	@Override
 	public void e_directionchange4() {
+		System.out.println("3");
 		directionchange();
 	}
 
 	@Override
 	public void e_directionchange1() {
+		System.out.println("4");
 		directionchange();
 	}
 
 	@Override
 	public void e_init() {
-
+		System.out.println("5");
 	}
 
 	@Override
 	public void e_directionchange2() {
+		System.out.println("6");
 		directionchange();
 	}
 
 	@Override
 	public void e_facingchange4() {
+		System.out.println("7");
 		occupancyChange(Side.FACING);
 	}
 
 	@Override
 	public void e_facingchange2() {
+		System.out.println("8");
 		occupancyChange(Side.FACING);
 	}
 
 	@Override
 	public void e_straightchange3() {
+		System.out.println("9");
 		occupancyChange(Side.STRAIGHT);
 	}
 
@@ -129,16 +142,19 @@ public class StraightStatusTest extends ExecutionContext implements StraightStat
 
 	@Override
 	public void e_straightchange2() {
+		System.out.println("10");
 		occupancyChange(Side.STRAIGHT);
 	}
 
 	@Override
 	public void e_facing_change3() {
+		System.out.println("11");
 		occupancyChange(Side.FACING);
 	}
 
 	@Override
 	public void e_facing_change1() {
+		System.out.println("12");
 		occupancyChange(Side.FACING);
 	}
 

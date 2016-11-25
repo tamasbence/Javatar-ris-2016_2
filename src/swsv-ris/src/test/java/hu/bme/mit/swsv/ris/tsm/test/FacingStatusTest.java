@@ -20,7 +20,7 @@ import hu.bme.mit.swsv.ris.common.logging.LoggerWrapper;
 import hu.bme.mit.swsv.ris.tsm.SignalMapper;
 import hu.bme.mit.swsv.ris.tsm.impl.SafetyLogicImpl;
 
-@GraphWalker(start = "e_init", pathGenerator = RandomPath.class, stopCondition = EdgeCoverage.class, stopConditionValue = "100")
+@GraphWalker(start = "e_init", pathGenerator = RandomPath.class, stopCondition = EdgeCoverage.class, stopConditionValue = "2")
 public class FacingStatusTest extends ExecutionContext implements FacingStatus {
 
 	public SafetyLogicImpl safetyLogic;
