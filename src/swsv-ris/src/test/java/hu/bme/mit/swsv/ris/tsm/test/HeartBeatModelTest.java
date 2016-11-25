@@ -1,14 +1,13 @@
 package hu.bme.mit.swsv.ris.tsm.test;
 
-import static org.mockito.Mockito.atLeast;
+import static org.mockito.Mockito.inOrder;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
 
 import org.graphwalker.core.condition.EdgeCoverage;
 import org.graphwalker.core.generator.RandomPath;
 import org.graphwalker.core.machine.ExecutionContext;
 import org.graphwalker.java.annotation.GraphWalker;
-import org.mockito.verification.VerificationMode;
+import org.mockito.InOrder;
 
 import hu.bme.mit.swsv.ris.common.Direction;
 import hu.bme.mit.swsv.ris.common.NeighborTSMInfo;
@@ -27,12 +26,12 @@ public class HeartBeatModelTest extends ExecutionContext implements HeartBeatMod
 
 	public SafetyLogicImpl safetyLogic;
 	public SignalMapper signalMapper;
+	public InOrder inOrderSignalMapper;
 	public SideTriple<SectionOccupancy> sectionOccupancies;
 	public Direction turnoutDirection;
 	public boolean initializing;
 
 	public HeartBeatModelTest() {
-		System.out.println("constructor");
 		sectionOccupancies = SideTriple.of(SectionOccupancy.FREE, SectionOccupancy.FREE, SectionOccupancy.FREE);
 		turnoutDirection = Direction.STRAIGHT;
 		final SideTriple<NeighborTSMInfo> neighborStatuses = SideTriple.of(
@@ -41,6 +40,7 @@ public class HeartBeatModelTest extends ExecutionContext implements HeartBeatMod
 		safetyLogic = new SafetyLogicImpl(sectionOccupancies, turnoutDirection, neighborStatuses,
 				LoggerWrapper.getLogger("testlogger"));
 		signalMapper = mock(SignalMapper.class);
+		inOrderSignalMapper = inOrder(signalMapper);
 		safetyLogic.setSignalMapper(signalMapper);
 		initializing = true;
 	}
@@ -61,15 +61,11 @@ public class HeartBeatModelTest extends ExecutionContext implements HeartBeatMod
 		safetyLogic.sectionOccupancyChanged(side, sectionOccupancies.get(side));
 	}
 
-	private VerificationMode getTimes() {
-		return atLeast(1);
-	}
-
 	@Override
 	public void v_sofo() {
 		final SideTriple<NeighborTSMStatus> expected = SideTriple.of(NeighborTSMStatus.DENIED, NeighborTSMStatus.DENIED,
 				NeighborTSMStatus.DENIED);
-		verify(signalMapper, getTimes()).sendStatus(expected);
+		inOrderSignalMapper.verify(signalMapper).sendStatus(expected);
 	}
 
 	@Override
@@ -86,7 +82,7 @@ public class HeartBeatModelTest extends ExecutionContext implements HeartBeatMod
 	public void v_soff() {
 		final SideTriple<NeighborTSMStatus> expected = SideTriple.of(NeighborTSMStatus.DENIED, NeighborTSMStatus.DENIED,
 				NeighborTSMStatus.ALLOWED);
-		verify(signalMapper, getTimes()).sendStatus(expected);
+		inOrderSignalMapper.verify(signalMapper).sendStatus(expected);
 	}
 
 	@Override
@@ -103,14 +99,14 @@ public class HeartBeatModelTest extends ExecutionContext implements HeartBeatMod
 	public void v_doof() {
 		final SideTriple<NeighborTSMStatus> expected = SideTriple.of(NeighborTSMStatus.DENIED, NeighborTSMStatus.DENIED,
 				NeighborTSMStatus.DENIED);
-		verify(signalMapper, getTimes()).sendStatus(expected);
+		inOrderSignalMapper.verify(signalMapper).sendStatus(expected);
 	}
 
 	@Override
 	public void v_soof() {
 		final SideTriple<NeighborTSMStatus> expected = SideTriple.of(NeighborTSMStatus.DENIED, NeighborTSMStatus.DENIED,
 				NeighborTSMStatus.ALLOWED);
-		verify(signalMapper, getTimes()).sendStatus(expected);
+		inOrderSignalMapper.verify(signalMapper).sendStatus(expected);
 	}
 
 	@Override
@@ -122,7 +118,7 @@ public class HeartBeatModelTest extends ExecutionContext implements HeartBeatMod
 	public void v_dooo() {
 		final SideTriple<NeighborTSMStatus> expected = SideTriple.of(NeighborTSMStatus.DENIED, NeighborTSMStatus.DENIED,
 				NeighborTSMStatus.DENIED);
-		verify(signalMapper, getTimes()).sendStatus(expected);
+		inOrderSignalMapper.verify(signalMapper).sendStatus(expected);
 	}
 
 	@Override
@@ -139,7 +135,7 @@ public class HeartBeatModelTest extends ExecutionContext implements HeartBeatMod
 	public void v_sooo() {
 		final SideTriple<NeighborTSMStatus> expected = SideTriple.of(NeighborTSMStatus.DENIED, NeighborTSMStatus.DENIED,
 				NeighborTSMStatus.DENIED);
-		verify(signalMapper, getTimes()).sendStatus(expected);
+		inOrderSignalMapper.verify(signalMapper).sendStatus(expected);
 	}
 
 	@Override
@@ -161,12 +157,11 @@ public class HeartBeatModelTest extends ExecutionContext implements HeartBeatMod
 	public void v_dfff() {
 		final SideTriple<NeighborTSMStatus> expected = SideTriple.of(NeighborTSMStatus.ALLOWED,
 				NeighborTSMStatus.ALLOWED, NeighborTSMStatus.ALLOWED);
-		verify(signalMapper, getTimes()).sendStatus(expected);
+		inOrderSignalMapper.verify(signalMapper).sendStatus(expected);
 	}
 
 	@Override
 	public void v_sfff() {
-		System.out.println(initializing);
 		if (initializing) {
 			initializing = false;
 			return;
@@ -174,14 +169,14 @@ public class HeartBeatModelTest extends ExecutionContext implements HeartBeatMod
 
 		final SideTriple<NeighborTSMStatus> expected = SideTriple.of(NeighborTSMStatus.ALLOWED,
 				NeighborTSMStatus.ALLOWED, NeighborTSMStatus.ALLOWED);
-		verify(signalMapper, getTimes()).sendStatus(expected);
+		inOrderSignalMapper.verify(signalMapper).sendStatus(expected);
 	}
 
 	@Override
 	public void v_dffo() {
 		final SideTriple<NeighborTSMStatus> expected = SideTriple.of(NeighborTSMStatus.DENIED,
 				NeighborTSMStatus.ALLOWED, NeighborTSMStatus.DENIED);
-		verify(signalMapper, getTimes()).sendStatus(expected);
+		inOrderSignalMapper.verify(signalMapper).sendStatus(expected);
 	}
 
 	@Override
@@ -218,14 +213,14 @@ public class HeartBeatModelTest extends ExecutionContext implements HeartBeatMod
 	public void v_dfof() {
 		final SideTriple<NeighborTSMStatus> expected = SideTriple.of(NeighborTSMStatus.ALLOWED,
 				NeighborTSMStatus.DENIED, NeighborTSMStatus.ALLOWED);
-		verify(signalMapper, getTimes()).sendStatus(expected);
+		inOrderSignalMapper.verify(signalMapper).sendStatus(expected);
 	}
 
 	@Override
 	public void v_sffo() {
 		final SideTriple<NeighborTSMStatus> expected = SideTriple.of(NeighborTSMStatus.ALLOWED,
 				NeighborTSMStatus.ALLOWED, NeighborTSMStatus.DENIED);
-		verify(signalMapper, getTimes()).sendStatus(expected);
+		inOrderSignalMapper.verify(signalMapper).sendStatus(expected);
 	}
 
 	@Override
@@ -252,7 +247,7 @@ public class HeartBeatModelTest extends ExecutionContext implements HeartBeatMod
 	public void v_dfoo() {
 		final SideTriple<NeighborTSMStatus> expected = SideTriple.of(NeighborTSMStatus.DENIED, NeighborTSMStatus.DENIED,
 				NeighborTSMStatus.DENIED);
-		verify(signalMapper, getTimes()).sendStatus(expected);
+		inOrderSignalMapper.verify(signalMapper).sendStatus(expected);
 	}
 
 	@Override
@@ -264,7 +259,7 @@ public class HeartBeatModelTest extends ExecutionContext implements HeartBeatMod
 	public void v_sfoo() {
 		final SideTriple<NeighborTSMStatus> expected = SideTriple.of(NeighborTSMStatus.DENIED, NeighborTSMStatus.DENIED,
 				NeighborTSMStatus.DENIED);
-		verify(signalMapper, getTimes()).sendStatus(expected);
+		inOrderSignalMapper.verify(signalMapper).sendStatus(expected);
 	}
 
 	@Override
@@ -276,7 +271,7 @@ public class HeartBeatModelTest extends ExecutionContext implements HeartBeatMod
 	public void v_sfof() {
 		final SideTriple<NeighborTSMStatus> expected = SideTriple.of(NeighborTSMStatus.DENIED, NeighborTSMStatus.DENIED,
 				NeighborTSMStatus.ALLOWED);
-		verify(signalMapper, getTimes()).sendStatus(expected);
+		inOrderSignalMapper.verify(signalMapper).sendStatus(expected);
 	}
 
 	@Override
@@ -318,7 +313,7 @@ public class HeartBeatModelTest extends ExecutionContext implements HeartBeatMod
 	public void v_doff() {
 		final SideTriple<NeighborTSMStatus> expected = SideTriple.of(NeighborTSMStatus.DENIED,
 				NeighborTSMStatus.ALLOWED, NeighborTSMStatus.DENIED);
-		verify(signalMapper, getTimes()).sendStatus(expected);
+		inOrderSignalMapper.verify(signalMapper).sendStatus(expected);
 	}
 
 	@Override
@@ -360,7 +355,7 @@ public class HeartBeatModelTest extends ExecutionContext implements HeartBeatMod
 	public void v_dofo() {
 		final SideTriple<NeighborTSMStatus> expected = SideTriple.of(NeighborTSMStatus.DENIED,
 				NeighborTSMStatus.ALLOWED, NeighborTSMStatus.DENIED);
-		verify(signalMapper, getTimes()).sendStatus(expected);
+		inOrderSignalMapper.verify(signalMapper).sendStatus(expected);
 	}
 
 	@Override
