@@ -156,9 +156,4 @@ public class FacingStatusTest extends ExecutionContext implements FacingStatus {
 		occupancyChange(Side.STRAIGHT);
 	}
 
-	@Override
-	public void e_facing_change1() {
-		occupancyChange(Side.FACING);
-	}
-
 }
