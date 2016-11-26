@@ -43,22 +43,44 @@
 			<artifactId>jacoco-maven-plugin</artifactId>
 			<version>0.7.7.201606060606</version>
 			<scope>test</scope>
-		</dependency>	
+		</dependency>
+                <dependency>
+			<groupId>org.awaitility</groupId>
+			<artifactId>awaitility</artifactId>
+			<version>2.0.0</version>
+			<scope>test</scope>
+		</dependency> 
 		<dependency>
-      		<groupId>org.awaitility</groupId>
-      		<artifactId>awaitility</artifactId>
-      		<version>2.0.0</version>
-      		<scope>test</scope>
-		</dependency>	
+			<groupId>org.graphwalker</groupId>
+			<artifactId>graphwalker-java</artifactId>
+			<version>${graphwalker.version}</version>
+			<scope>test</scope>
+		</dependency>		
 	</dependencies>
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<graphwalker.version>3.4.2</graphwalker.version>
 	</properties>
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.graphwalker</groupId>
+				<artifactId>graphwalker-maven-plugin</artifactId>
+				<version>${graphwalker.version}</version>
+				<!-- Bind goals to the default lifecycle -->
+				<executions>
+				  <execution>
+					<id>generate-test-sources</id>
+					<phase>generate-test-sources</phase>
+					<goals>
+					  <goal>generate-test-sources</goal>
+					</goals>
+				  </execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
@@ -151,3 +173,4 @@
 		</plugins>
 	</build>
 </project>
+
