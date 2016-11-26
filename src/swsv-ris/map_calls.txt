@@ -1,0 +1,3 @@
+hu.bme.mit.swsv.ris.tsm.impl.*
+  hu.bme.mit.swsv.ris.tsm.impl.SignalMapperImpl.sendStatus(hu.bme.mit.swsv.ris.common.SideTriple) hu.bme.mit.swsv.ris.tsm.impl.MapperForSignalMapper
+  hu.bme.mit.swsv.ris.tsm.impl.SignalMapperImpl.sendControl(hu.bme.mit.swsv.ris.common.SideTriple) hu.bme.mit.swsv.ris.tsm.impl.MapperForSignalMapper

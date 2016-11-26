@@ -1,0 +1,6 @@
+Class re 'hu.bme.mit.swsv.ris.tsm.impl.*': 
+  hu.bme.mit.swsv.ris.tsm.impl.SignalMapperImpl.sendStatus (hu.bme.mit.swsv.ris.common.SideTriple) - hu.bme.mit.swsv.ris.tsm.impl.MapperForSignalMapper [0 replacements]
+  hu.bme.mit.swsv.ris.tsm.impl.SignalMapperImpl.sendControl (hu.bme.mit.swsv.ris.common.SideTriple) - hu.bme.mit.swsv.ris.tsm.impl.MapperForSignalMapper [0 replacements]
+Class re 'hu.bme.mit.swsv.ris.tsm.impl.*': 
+  hu.bme.mit.swsv.ris.tsm.impl.SignalMapperImpl.sendStatus (hu.bme.mit.swsv.ris.common.SideTriple) - hu.bme.mit.swsv.ris.tsm.impl.MapperForSignalMapper [0 replacements]
+  hu.bme.mit.swsv.ris.tsm.impl.SignalMapperImpl.sendControl (hu.bme.mit.swsv.ris.common.SideTriple) - hu.bme.mit.swsv.ris.tsm.impl.MapperForSignalMapper [0 replacements]
