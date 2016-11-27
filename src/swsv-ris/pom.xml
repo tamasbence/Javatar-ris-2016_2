@@ -170,7 +170,26 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+        			<groupId>org.evosuite.plugins</groupId>
+        			<artifactId>evosuite-maven-plugin</artifactId>
+        			<version>1.0.3</version>
+			</plugin>
 		</plugins>
 	</build>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>EvoSuite</id>
+			<name>EvoSuite Repository</name>
+	    		<url>http://www.evosuite.org/m2</url>
+	  	</pluginRepository>
+	</pluginRepositories>
+	<repositories>
+    		<repository>
+	      		<id>EvoSuite</id>
+			<name>EvoSuite Repository</name>
+			<url>http://www.evosuite.org/m2</url>
+	    	</repository>
+  	</repositories>
 </project>
 
