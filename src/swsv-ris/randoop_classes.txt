@@ -10,5 +10,5 @@ hu.bme.mit.swsv.ris.signals.TurnoutDirectionSignal
 hu.bme.mit.swsv.ris.common.NeighborTSMStatus
 hu.bme.mit.swsv.ris.common.NeighborTSMInfo
 hu.bme.mit.swsv.ris.common.Direction
-hu.bme.mit.swsv.ris.tsm.impl.MapperForSignalMapper
-java.util.Date
+hu.bme.mit.swsv.ris.randoop.RandoopSignalMapper
+hu.bme.mit.swsv.ris.randoop.RandoopTestInitializer

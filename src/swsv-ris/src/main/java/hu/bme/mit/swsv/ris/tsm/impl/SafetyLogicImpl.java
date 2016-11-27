@@ -60,19 +60,6 @@ public final class SafetyLogicImpl implements SafetyLogic {
 		timer = new Timer();
 	}
 
-	public static SafetyLogicImpl createSafetyLogicImpl(final MapperForSignalMapper sm) {
-		final SideTriple<SectionOccupancy> sectionOccupancies = SideTriple.of(SectionOccupancy.FREE,
-				SectionOccupancy.FREE, SectionOccupancy.FREE);
-		final Direction turnoutDirection = Direction.STRAIGHT;
-		final SideTriple<NeighborTSMInfo> neighborStatuses = SideTriple.of(
-				NeighborTSMInfo.some(NeighborTSMStatus.ALLOWED), NeighborTSMInfo.some(NeighborTSMStatus.ALLOWED),
-				NeighborTSMInfo.some(NeighborTSMStatus.ALLOWED));
-		final SafetyLogicImpl safetyLogic = new SafetyLogicImpl(sectionOccupancies, turnoutDirection, neighborStatuses,
-				LoggerWrapper.getLogger("testlogger"));
-		safetyLogic.signalMapper = sm;
-		return safetyLogic;
-	}
-
 	/**
 	 * Sets the signal mapper.
 	 *

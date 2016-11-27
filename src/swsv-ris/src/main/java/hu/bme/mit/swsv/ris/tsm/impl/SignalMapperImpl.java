@@ -168,12 +168,12 @@ public class SignalMapperImpl implements SignalMapper {
 					Side.FACING));
 		}
 		if (!neighborIds.getStraight().equals(-1)) {
-			mqClient.publish(new HeartBeatSignal(ownTurnoutId, neighborIds.getStraight(),
-					statusForNeighbors.getStraight(), Side.STRAIGHT));
+			mqClient.publish(new HeartBeatSignal(ownTurnoutId, neighborIds.getStraight(), statusForNeighbors
+					.getStraight(), Side.STRAIGHT));
 		}
 		if (!neighborIds.getDivergent().equals(-1)) {
-			mqClient.publish(new HeartBeatSignal(ownTurnoutId, neighborIds.getDivergent(),
-					statusForNeighbors.getDivergent(), Side.DIVERGENT));
+			mqClient.publish(new HeartBeatSignal(ownTurnoutId, neighborIds.getDivergent(), statusForNeighbors
+					.getDivergent(), Side.DIVERGENT));
 		}
 	}
 }
