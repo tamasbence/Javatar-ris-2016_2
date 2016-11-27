@@ -9,11 +9,6 @@ import static hu.bme.mit.swsv.ris.common.NeighborTSMStatus.DENIED;
 import static hu.bme.mit.swsv.ris.common.SectionControl.DISABLED;
 import static hu.bme.mit.swsv.ris.common.SectionControl.ENABLED;
 import static hu.bme.mit.swsv.ris.common.SectionOccupancy.OCCUPIED;
-
-import java.util.Date;
-import java.util.Timer;
-import java.util.TimerTask;
-
 import hu.bme.mit.swsv.ris.common.Direction;
 import hu.bme.mit.swsv.ris.common.NeighborTSMInfo;
 import hu.bme.mit.swsv.ris.common.NeighborTSMStatus;
@@ -25,6 +20,10 @@ import hu.bme.mit.swsv.ris.common.logging.LogEntry;
 import hu.bme.mit.swsv.ris.common.logging.LoggerWrapper;
 import hu.bme.mit.swsv.ris.tsm.SafetyLogic;
 import hu.bme.mit.swsv.ris.tsm.SignalMapper;
+
+import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Implementation of the safety logic interface.
@@ -59,6 +58,19 @@ public final class SafetyLogicImpl implements SafetyLogic {
 		this.neighborStatuses = neighborStatuses;
 
 		timer = new Timer();
+	}
+
+	public static SafetyLogicImpl createSafetyLogicImpl(final MapperForSignalMapper sm) {
+		final SideTriple<SectionOccupancy> sectionOccupancies = SideTriple.of(SectionOccupancy.FREE,
+				SectionOccupancy.FREE, SectionOccupancy.FREE);
+		final Direction turnoutDirection = Direction.STRAIGHT;
+		final SideTriple<NeighborTSMInfo> neighborStatuses = SideTriple.of(
+				NeighborTSMInfo.some(NeighborTSMStatus.ALLOWED), NeighborTSMInfo.some(NeighborTSMStatus.ALLOWED),
+				NeighborTSMInfo.some(NeighborTSMStatus.ALLOWED));
+		final SafetyLogicImpl safetyLogic = new SafetyLogicImpl(sectionOccupancies, turnoutDirection, neighborStatuses,
+				LoggerWrapper.getLogger("testlogger"));
+		safetyLogic.signalMapper = sm;
+		return safetyLogic;
 	}
 
 	/**
