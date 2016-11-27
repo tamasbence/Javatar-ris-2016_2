@@ -1,0 +1,16 @@
+# Working directory: root of the project
+mvn compile
+mvn evosuite:help
+
+# Copy dependecies to pom.xml (already done)
+
+# Generate tests for all classes
+mvn -Dcores=2 evosuite:generate
+
+# Export tests from hidden ./evosuite folder
+mvn evosuite:export
+
+# Generate tests only for one class NOTE: $EVOSUITE is "java -jar evosuite-1.0.3.jar"
+$EVOSUITE -class hu.bme.mit.swsv.ris.tsm.impl.SafetyLogicImpl -projectCP target/classes
+
+# Generated tests can be found in folder "evosuite-tests"
