@@ -1,0 +1,10 @@
+//
+// This file specifies a set of method call substitutions when running 
+// under Randoop.
+//
+
+hu.bme.mit.swsv.ris.tsm.*
+  java.lang.System.exit (int) hu.bme.mit.swsv.ris.randoop.RandoopMapper
+  hu.bme.mit.swsv.ris.tsm.impl.SafetyLogicImpl.mapTest ()  hu.bme.mit.swsv.ris.randoop.RandoopMapper
+  hu.bme.mit.swsv.ris.tsm.impl.SignalMapperImpl.testReplace (hu.bme.mit.swsv.ris.common.SideTriple)  hu.bme.mit.swsv.ris.randoop.RandoopMapper
+  hu.bme.mit.swsv.ris.tsm.impl.SignalMapperImpl.sendControl (hu.bme.mit.swsv.ris.common.SideTriple)  hu.bme.mit.swsv.ris.randoop.RandoopMapper

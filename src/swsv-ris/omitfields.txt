@@ -1,1 +1,0 @@
-hu.bme.mit.swsv.ris.tsm.impl.SafetyLogicImpl.logger
